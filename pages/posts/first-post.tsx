@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { DefaultLayout } from "../../src/layout/DefaultLayout";
+import { DefaultLayout } from "../../src/components/layout/DefaultLayout";
 
 export default function FirstPost() {
   return (

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
-import { DefaultLayout } from "../src/layout/DefaultLayout";
+import { DefaultLayout } from "../src/components/layout/DefaultLayout";
 
 export default function Home() {
   return (
@@ -33,6 +33,7 @@ export default function Home() {
 }
 
 const Greetings = styled.div`
+  margin-top: 120px;
   margin-bottom: 60px;
   box-sizing: border-box;
 

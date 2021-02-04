@@ -2,25 +2,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
+import { MenuOptions, SocialNetwork } from "./options";
 
 interface Props {}
-
-interface OptionItemProps {
-  link: string;
-  text: string;
-}
-
-function OptionItem(props: OptionItemProps) {
-  const { link, text } = props;
-
-  return (
-    <ListItem>
-      <Link href={link}>
-        <LinkText>{text}</LinkText>
-      </Link>
-    </ListItem>
-  );
-}
 
 export function TopMenu(props: Props) {
   const {} = props;
@@ -34,9 +18,7 @@ export function TopMenu(props: Props) {
       <Container>
         <Content>
           <ContactContainer>
-            <SocialNetworkLogo src="/images/snlogos/ln.svg" alt="linkedin" />
-            <SocialNetworkLogo src="/images/snlogos/gh.svg" alt="github" />
-            <SocialNetworkLogo src="/images/snlogos/email.svg" alt="email" />
+            <SocialNetwork />
           </ContactContainer>
 
           <ButtonContainer>
@@ -50,16 +32,7 @@ export function TopMenu(props: Props) {
         </Content>
       </Container>
       <CollapsableContainer isOpen={open}>
-        <OptionsContainer>
-          <OptionItem link="/" text="PORTFOLIO" />
-          <OptionItem link="/" text="BLOG" />
-          <OptionItem link="/" text="CONTATO" />
-        </OptionsContainer>
-
-        <OptionsContainer>
-          <OptionItem link="/" text="CV" />
-          <OptionItem link="/" text="BLOG" />
-        </OptionsContainer>
+        <MenuOptions />
       </CollapsableContainer>
     </Wrapper>
   );
@@ -72,30 +45,29 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 100%;
   margin: 0;
-  height: 80px;
   background: white;
   padding: 25px;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   box-sizing: border-box;
   z-index: 999;
+  display: none;
 
   @media (max-width: 360px) {
-    visibility: visible;
+    display: block;
+    height: 80px;
   }
 `;
 
 const CollapsableContainer = styled.div<{ open: boolean }>`
   width: 100%;
   background: white;
-  display: flex;
   flex-direction: column;
-  visibility: hidden;
-  height: 0;
+  display: none;
+  overflow: hidden;
 
   @media (max-width: 360px) {
-    visibility: visible;
+    display: flex;
     height: ${({ isOpen }) => (isOpen ? "240px" : "0")};
     transition: height 0.5s;
   }
@@ -127,16 +99,6 @@ const CollapseButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 5px 5px;
-`;
-
-const OptionsContainer = styled.ul`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  list-style: none;
-  display: inline-block;
-  box-sizing: border-box;
-  flex: 1;
 `;
 
 const ListItem = styled.li`
