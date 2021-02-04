@@ -12,6 +12,8 @@ export default function Index(props: Props) {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
 
+  const h = window.innerHeight;
+
   const [y, setY] = useState(0);
   const [index, setIndex] = useState(0);
 
@@ -28,12 +30,13 @@ export default function Index(props: Props) {
     if (e.deltaY < 0 && y > 0) {
       setY(y - 1);
     } else {
-      if (y < 2) setY(y + 1);
+      if (e.deltaY > 0 && y < 2) setY(y + 1);
     }
   };
 
   useEffect(() => {
-    setIndex(-754 * y);
+    console.log(y);
+    setIndex(-h * y);
   }, [y]);
 
   return (
