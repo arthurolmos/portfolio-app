@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { DefaultLayout } from "../../src/components/layout/DefaultLayout";
-import ScrollIntoView from "react-scroll-into-view";
 import styled from "styled-components";
 
 interface Props {}
@@ -8,9 +6,8 @@ interface Props {}
 export default function Index(props: Props) {
   const {} = props;
 
-  const h = window.innerHeight;
-
   const [y, setY] = useState(0);
+  const [h, setH] = useState(0);
   const [index, setIndex] = useState(0);
 
   const throttle = 500;
@@ -29,6 +26,11 @@ export default function Index(props: Props) {
       if (e.deltaY > 0 && y < 2) setY(y + 1);
     }
   };
+
+  useEffect(() => {
+    const h = window.innerHeight;
+    setH(h);
+  }, []);
 
   useEffect(() => {
     setIndex(-h * y);
