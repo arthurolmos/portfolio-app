@@ -63,6 +63,17 @@ export default function Index(props: Props) {
 
   return (
     <Container onWheel={wheelEvent}>
+      <RightMenu>
+        {portfolioItems.map((item, index) => {
+          return (
+            <RighMenuItem
+              key={index}
+              active={index === y}
+              onClick={(e) => setY(index)}
+            />
+          );
+        })}
+      </RightMenu>
       {portfolioItems.map((item, i) => {
         return <PortfolioListItem key={i} index={index} item={item} />;
       })}
@@ -81,6 +92,45 @@ const Container = styled.div`
   @media (max-width: 360px) {
     margin-left: 0;
   }
+`;
+
+const RightMenu = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  box-sizing: border-box;
+
+  color: red;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+`;
+
+const RighMenuItem = styled.div`
+  box-sizing: border-box;
+  width: 40px;
+  height: 5px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 50px 0 0 50px;
+  cursor: pointer;
+
+  &:hover {
+    width: 50px;
+    transform-origin: right center;
+  }
+
+  ${({ active }) =>
+    active &&
+    `{
+    width: 50px;
+  }`}
 `;
 
 const Background = styled.div`
