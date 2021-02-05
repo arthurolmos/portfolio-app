@@ -29,10 +29,6 @@ export function MenuOptions(props: Props) {
   const path = router.pathname.split("/");
   const mainPath = path[1];
 
-  console.log(path);
-  console.log(mainPath);
-  console.log(mainPath);
-
   return (
     <>
       <OptionsContainer>

@@ -14,8 +14,7 @@ const Container = styled.div`
   margin-left: 300px;
   padding: 0 40px;
   box-sizing: border-box;
-
-  @media (max-width: 360px) {
+  background: ${({ background }) => background} @media (max-width: 360px) {
     margin-left: 0;
   }
 `;
