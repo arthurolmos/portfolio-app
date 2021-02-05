@@ -39,8 +39,8 @@ const SocialNetworkLogo = styled.img`
   }
 
   @media (max-width: 360px) {
-    width: 30px;
+    width: 20px;
     height: auto;
-    margin: 0 10px;
+    margin: 0 5px;
   }
 `;

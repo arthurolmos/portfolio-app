@@ -11,15 +11,15 @@ export function TopMenu(props: Props) {
 
   const [open, setOpen] = useState(false);
 
-  useEffect(() => console.log(open), [open]);
-
   return (
-    <Wrapper>
+    <>
       <Container>
         <Content>
           <ContactContainer>
             <SocialNetwork />
           </ContactContainer>
+
+          <LogoContainer>Arthur Wosniaki</LogoContainer>
 
           <ButtonContainer>
             <CollapseButton
@@ -34,37 +34,42 @@ export function TopMenu(props: Props) {
       <CollapsableContainer isOpen={open}>
         <MenuOptions />
       </CollapsableContainer>
-    </Wrapper>
+    </>
   );
 }
-
-const Wrapper = styled.div`
-  width: 100%;
-`;
 
 const Container = styled.div`
   width: 100%;
   margin: 0;
   background: white;
-  padding: 25px;
+  padding: 15px;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   z-index: 999;
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
 
   @media (max-width: 360px) {
     display: block;
-    height: 80px;
   }
 `;
 
-const CollapsableContainer = styled.div<{ open: boolean }>`
+const CollapsableContainer = styled.div`
   width: 100%;
   background: white;
   flex-direction: column;
   display: none;
   overflow: hidden;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  left: 0;
+  z-index: 998;
 
   @media (max-width: 360px) {
     display: flex;
@@ -78,6 +83,8 @@ const Content = styled.div`
   flex-direction: row;
   height: 100%;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ContactContainer = styled.div`
@@ -101,33 +108,10 @@ const CollapseButton = styled.button`
   padding: 5px 5px;
 `;
 
-const ListItem = styled.li`
-  margin: 0;
-  padding: 0 20px;
+const LogoContainer = styled.div`
+  flex: 2;
+  align-items: center;
+  justify-content: center;
   color: black;
-  box-sizing: border-box;
-  margin: auto;
-  display: block;
-`;
-
-const LinkText = styled.p`
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-sizing: border-box;
-  text-align: right;
-
-  &:hover:before {
-    content: "<";
-    margin: 0 10px;
-  }
-
-  &:hover {
-    opacity: 0.5;
-  }
-`;
-
-const SocialNetworkLogo = styled.img`
-  width: 50px;
-  height: auto;
+  display: flex;
 `;

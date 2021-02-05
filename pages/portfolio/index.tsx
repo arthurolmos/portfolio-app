@@ -8,10 +8,6 @@ interface Props {}
 export default function Index(props: Props) {
   const {} = props;
 
-  const ref0 = useRef(null);
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-
   const h = window.innerHeight;
 
   const [y, setY] = useState(0);
@@ -35,19 +31,18 @@ export default function Index(props: Props) {
   };
 
   useEffect(() => {
-    console.log(y);
     setIndex(-h * y);
   }, [y]);
 
   return (
     <Container onWheel={wheelEvent}>
-      <Content background="purple" index={index}>
+      <Content background="/images/portfolio/filosofem.jpg" index={index}>
         Im Here!
       </Content>
-      <Content background="red" index={index}>
+      <Content background="/images/portfolio/swamp.jpg" index={index}>
         Im Here!
       </Content>
-      <Content background="gray" index={index}>
+      <Content background="/images/portfolio/newmoon.jpg" index={index}>
         Im Here!
       </Content>
     </Container>
@@ -59,7 +54,6 @@ const Container = styled.div`
   box-sizing: border-box;
   width: 100% - 300px;
   height: 100vh;
-  background: red;
   scroll-behavior: smooth;
   overflow: hidden;
 
@@ -75,5 +69,13 @@ const Content = styled.div`
 
   transition: all 700ms ease 0s;
   transform: ${({ index }) => `translate3d(0, ${index}px, 0)`};
-  background-color: ${({ background }) => background};
+
+  ${({ background }) =>
+    background &&
+    `
+    background-image: url(${background});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  `}
 `;
