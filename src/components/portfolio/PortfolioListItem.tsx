@@ -68,7 +68,8 @@ const ItemContainer = styled.div`
   background: white;
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  // height: 100vh;
   transition: all 700ms ease 0s;
   transform: ${({ index }) => `translate3d(0, ${index}px, 0)`};
   z-index: 1;

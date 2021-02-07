@@ -5,10 +5,10 @@ import "../styles/global.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div style={{ height: "100%" }}>
       <SideMenu />
       <TopMenu />
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }

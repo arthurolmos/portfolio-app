@@ -62,12 +62,14 @@ const Container = styled.div`
   margin-left: 300px;
   box-sizing: border-box;
   width: 100% - 300px;
-  height: 100vh;
+  // height: 100vh;
+  height: 100%;
   scroll-behavior: smooth;
   overflow: hidden;
 
   @media (max-width: 600px) {
     margin-left: 0;
+    height: ;
   }
 `;
 
