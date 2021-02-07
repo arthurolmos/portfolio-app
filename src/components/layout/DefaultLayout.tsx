@@ -2,19 +2,42 @@ import styled from "styled-components";
 
 interface Props {
   children: React.ReactNode;
+  backgroundColor?: string;
+  color?: string;
 }
 
 export function DefaultLayout(props: Props) {
-  const { children } = props;
+  const { children, backgroundColor, color } = props;
 
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      <Content backgroundColor={backgroundColor} color={color}>
+        {children}
+      </Content>
+    </Container>
+  );
 }
 
 const Container = styled.div`
   margin-left: 300px;
-  padding: 0 40px;
   box-sizing: border-box;
-  background: ${({ background }) => background} @media (max-width: 360px) {
+
+  @media (max-width: 600px) {
     margin-left: 0;
   }
 `;
+
+const Content = styled.div`
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px;
+
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  color: ${({ color }) => color};
+`;
+
+Content.defaultProps = {
+  backgroundColor: "transparent",
+  color: "white",
+};

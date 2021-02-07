@@ -47,7 +47,7 @@ const Container = styled.div`
   box-sizing: border-box;
   display: flex;
 
-  @media (max-width: 360px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;
@@ -59,7 +59,7 @@ const Content = styled.div`
   height: 100%;
   box-sizing: border-box;
 
-  @media (max-width: 360px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;

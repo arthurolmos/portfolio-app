@@ -1,6 +1,6 @@
-import { PortfolioItem } from "../interfaces/PortfolioItem";
+import { IPortfolioItem } from "../interfaces/IPortfolioItem";
 
-export const portfolioItems: PortfolioItem[] = [
+export const portfolioItems: IPortfolioItem[] = [
   {
     backgroundImage: "/images/portfolio/portfolio-app/home.jpg",
     title: "Portfolio",

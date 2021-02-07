@@ -1,29 +1,14 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { OptionItem } from "../options/OptionItem";
+import { menuItems } from "../../../data";
 import styled from "styled-components";
 
-interface Props {}
-
-interface OptionItemProps {
-  link: string;
-  text: string;
-  active: boolean;
-}
-
-function OptionItem(props: OptionItemProps) {
-  const { link, text, active } = props;
-
-  return (
-    <ListItem>
-      <Link href={link}>
-        <LinkText active={active}>{text}</LinkText>
-      </Link>
-    </ListItem>
-  );
+interface Props {
+  close?: () => void;
 }
 
 export function MenuOptions(props: Props) {
-  const {} = props;
+  const { close } = props;
 
   const router = useRouter();
   const path = router.pathname.split("/");
@@ -32,18 +17,19 @@ export function MenuOptions(props: Props) {
   return (
     <>
       <OptionsContainer>
-        <OptionItem
-          link="/portfolio"
-          text="PORTFOLIO"
-          active={mainPath === "portfolio"}
-        />
-        <OptionItem link="/" text="BLOG" active={mainPath === "blog"} />
-        <OptionItem link="/" text="CONTATO" active={mainPath === "contact"} />
-      </OptionsContainer>
+        {menuItems.map((item) => {
+          const { option, url } = item;
 
-      <OptionsContainer>
-        <OptionItem link="/" text="CV" active={mainPath === "cv"} />
-        <OptionItem link="/" text="BLOG" active={mainPath === "blog"} />
+          return (
+            <OptionItem
+              key={option}
+              link={url}
+              text={option.toUpperCase()}
+              active={mainPath === option.replace("/", "").toLowerCase()}
+              close={close}
+            />
+          );
+        })}
       </OptionsContainer>
     </>
   );
@@ -57,55 +43,4 @@ const OptionsContainer = styled.ul`
   display: inline-block;
   box-sizing: border-box;
   flex: 1;
-`;
-
-const ListItem = styled.li`
-  color: black;
-  padding: 0;
-  box-sizing: border-box;
-  margin: auto;
-  display: block;
-  flex: 1;
-
-  @media (max-width: 360px) {
-    margin: 0;
-    padding: 0 20px;
-  }
-`;
-
-const LinkText = styled.p`
-  text-decoration: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-sizing: border-box;
-
-  ${({ active }) =>
-    active &&
-    `
-  @media (min-width: 361px) {
-    &::after {
-      content:  " >";
-    }
-  }
-
-  @media (max-width: 360px) {
-    &::before { 
-      content:  "< ";
-    }
-  }
-  `}
-
-  &:hover {
-    opacity: 0.5;
-
-    @media (min-width: 361px) {
-      :after {
-        content: " >";
-      }
-    }
-  }
-
-  @media (max-width: 360px) {
-    text-align: right;
-  }
 `;

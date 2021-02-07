@@ -37,7 +37,7 @@ const Greetings = styled.div`
   margin-bottom: 60px;
   box-sizing: border-box;
 
-  @media (max-width: 360px) {
+  @media (max-width: 600px) {
     margin-bottom: 25px;
     box-sizing: border-box;
   }

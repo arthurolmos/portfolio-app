@@ -11,28 +11,24 @@ export function TopMenu(props: Props) {
 
   const [open, setOpen] = useState(false);
 
+  const close = () => setOpen(false);
+
   return (
     <>
       <Container>
-        <Content>
-          <ContactContainer>
-            <SocialNetwork />
-          </ContactContainer>
+        <SocialNetwork />
 
-          <LogoContainer>Arthur Wosniaki</LogoContainer>
+        <LogoContainer>Arthur Wosniaki</LogoContainer>
 
-          <ButtonContainer>
-            <CollapseButton
-              style={{ boxSizing: "border-box" }}
-              onClick={() => setOpen(!open)}
-            >
-              <FaBars />
-            </CollapseButton>
-          </ButtonContainer>
-        </Content>
+        <ButtonContainer>
+          <CollapseButton onClick={() => setOpen(!open)}>
+            <FaBars />
+          </CollapseButton>
+        </ButtonContainer>
       </Container>
+
       <CollapsableContainer isOpen={open}>
-        <MenuOptions />
+        <MenuOptions close={close} />
       </CollapsableContainer>
     </>
   );
@@ -54,8 +50,11 @@ const Container = styled.div`
   left: 0;
   height: 80px;
 
-  @media (max-width: 360px) {
-    display: block;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  @media (max-width: 600px) {
+    display: flex;
   }
 `;
 
@@ -71,26 +70,11 @@ const CollapsableContainer = styled.div`
   left: 0;
   z-index: 998;
 
-  @media (max-width: 360px) {
+  @media (max-width: 600px) {
     display: flex;
     height: ${({ isOpen }) => (isOpen ? "240px" : "0")};
     transition: height 0.5s;
   }
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ContactContainer = styled.div`
-  display: flex;
-  flex: 1;
-  box-sizing: border-box;
 `;
 
 const ButtonContainer = styled.div`
@@ -106,6 +90,7 @@ const CollapseButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 5px 5px;
+  box-sizing: border-box;
 `;
 
 const LogoContainer = styled.div`
