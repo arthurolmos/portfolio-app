@@ -5,7 +5,7 @@ import { DefaultLayout } from "../src/components/layout/DefaultLayout";
 
 export default function Home() {
   return (
-    <div style={{ height: "100%" }}>
+    <>
       <Head>
         <title>First Post</title>
       </Head>
@@ -28,7 +28,7 @@ export default function Home() {
           </h3>
         </Introduction>
       </DefaultLayout>
-    </div>
+    </>
   );
 }
 
