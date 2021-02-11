@@ -5,7 +5,7 @@ import remark from "remark";
 import html from "remark-html";
 
 export async function getFileData(id: string, dir: string) {
-  const directory = path.resolve(process.cwd(), "pages", dir, "data");
+  const directory = path.resolve(process.cwd(), "src", "data", "pages", dir);
 
   const fullPath = path.join(directory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");

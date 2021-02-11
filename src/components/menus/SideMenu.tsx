@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { MenuOptions, SocialNetwork } from "./options";
+import { MenuOptions, SocialNetwork } from "./items";
 
 interface Props {}
 

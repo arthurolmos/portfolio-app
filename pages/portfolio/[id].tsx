@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import styled from "styled-components";
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   const paths = getAllFilesIds("portfolio");
   return {
     paths,
@@ -45,10 +45,10 @@ export default function Portfolio({ fileData }: { fileData: IFileData }) {
                 <h1>{title}</h1>
               </Title>
               <LinkContainer>
-                <a href={site}>
+                <a href={site} title={site}>
                   <FaGlobeAmericas />
                 </a>
-                <a href={github}>
+                <a href={github} title={github}>
                   <FaGithub />
                 </a>
               </LinkContainer>
@@ -93,8 +93,8 @@ const Body = styled.div`
 `;
 
 const BackButton = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   z-index: 999;
   position: fixed;
@@ -116,7 +116,7 @@ const BackButton = styled.div`
 `;
 
 const FaChevronLeftStyled = styled(FaChevronLeft)`
-  font-size: 40px;
+  font-size: 35px;
 
   @media (max-width: 600px) {
     font-size: 20px;
@@ -138,6 +138,9 @@ const LinkContainer = styled.div`
   a {
     color: black;
     font-size: 30px;
+  }
+
+  a:first-child {
     margin-right: 30px;
   }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { portfolioItems } from "./portfolioItems";
+import { portfolioItems } from "../../src/data/items/portfolioItems";
 import { PortfolioListItem } from "../../src/components/portfolio/PortfolioListItem";
 import { DefaultLayout } from "../../src/components/layout/DefaultLayout";
 import Head from "next/head";
@@ -85,7 +85,7 @@ export default function Index(props: Props) {
           index={index}
         >
           {portfolioItems.map((item, i) => {
-            return <PortfolioListItem key={i} item={item} />;
+            return <PortfolioListItem key={i} item={item} index={i} y={y} />;
           })}
         </Container>
       </DefaultLayout>

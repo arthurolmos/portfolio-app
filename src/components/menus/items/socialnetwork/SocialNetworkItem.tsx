@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ISocialNetworkItem } from "../../../interfaces";
+import { ISocialNetworkItem } from "../../../../interfaces";
 
 interface Props {
   item: ISocialNetworkItem;

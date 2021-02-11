@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { IFileData } from "../interfaces";
 
 export function getSortedFileData(dir): IFileData[] {
-  const directory = path.resolve(process.cwd(), "pages", dir, "data");
+  const directory = path.resolve(process.cwd(), "src", "data", "pages", dir);
 
   // Get file names under /posts
   const fileNames = fs.readdirSync(directory);

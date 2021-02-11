@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import { MenuOptions, SocialNetwork } from "./options";
+import { MenuOptions, SocialNetwork } from "./items";
 
 interface Props {}
 

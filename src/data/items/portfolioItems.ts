@@ -1,4 +1,4 @@
-import { IPortfolioItem } from "../../src/interfaces/IPortfolioItem";
+import { IPortfolioItem } from "../../interfaces/IPortfolioItem";
 
 export const portfolioItems: IPortfolioItem[] = [
   {

@@ -1,12 +1,15 @@
 import { IPortfolioItem } from "../../interfaces/IPortfolioItem";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
+  index: number;
+  y: number;
 }
 
-export function PortfolioListItem({ item }: PortfolioItemProps) {
+export function PortfolioListItem({ item, index, y }: PortfolioItemProps) {
   const { backgroundImage, title, text } = item;
 
   return (
@@ -14,19 +17,58 @@ export function PortfolioListItem({ item }: PortfolioItemProps) {
       <Background background={backgroundImage}>
         <Backdrop>
           <Content>
-            <h1>{title}</h1>
+            <Header>
+              <LineContainer>
+                <Line active={index === y} />
+              </LineContainer>
+              <Title>
+                <h1>{title}</h1>
+              </Title>
+            </Header>
 
             <div>{text}</div>
           </Content>
 
-          <Link href={`/portfolio/${title.toLowerCase()}`}>
-            <Button>Ver Mais</Button>
-          </Link>
+          <ButtonContainer>
+            <Link href={`/portfolio/${title.toLowerCase()}`}>
+              <Button>Ver Mais</Button>
+            </Link>
+          </ButtonContainer>
         </Backdrop>
       </Background>
     </ItemContainer>
   );
 }
+
+const Header = styled.div`
+  display: flex;
+`;
+
+const Title = styled.div`
+  display: inline-flex;
+  margin-left: 30px;
+  justify-content: flex-end;
+  color: black;
+`;
+
+const LineContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
+
+const Line = styled.div`
+  border-top: 5px solid black;
+  border-radius: 0 25px 25px 0;
+  width: 0;
+  transition: all 1s ease;
+
+  ${({ active }) =>
+    active &&
+    `
+    width: 100%;
+  `}
+`;
 
 const Background = styled.div`
   width: 100%;
@@ -94,7 +136,7 @@ const Backdrop = styled.div`
   left: 2.5em;
   background: white;
   content: "";
-  opacity: 0.8;
+  opacity: 0.9;
 `;
 
 const Button = styled.button`
@@ -104,7 +146,6 @@ const Button = styled.button`
   border-radius: 15px;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left: 15px;
   width: 100px;
   height: 40px;
   transition: all 0.3s ease;
@@ -117,4 +158,11 @@ const Button = styled.button`
     decoration: none;
     outline: none;
   }
+`;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
 `;

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { OptionItem } from "../options/OptionItem";
+import { OptionItem } from "./OptionItem";
 import { menuItems } from "./menuItems";
 import styled from "styled-components";
 
