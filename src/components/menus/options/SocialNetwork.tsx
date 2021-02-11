@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SocialNetworkItem } from "./SocialNetworkItem";
-import { socialNetworkItems } from "../../../data";
+import { socialNetworkItems } from "./socialNetworkItems";
 
 interface Props {}
 
@@ -22,5 +22,4 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
-  box-sizing: border-box;
 `;

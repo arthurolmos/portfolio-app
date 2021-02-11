@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { OptionItem } from "../options/OptionItem";
-import { menuItems } from "../../../data";
+import { menuItems } from "./menuItems";
 import styled from "styled-components";
 
 interface Props {
@@ -41,6 +41,5 @@ const OptionsContainer = styled.ul`
   width: 100%;
   list-style: none;
   display: inline-block;
-  box-sizing: border-box;
   flex: 1;
 `;

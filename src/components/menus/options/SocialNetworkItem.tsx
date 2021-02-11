@@ -38,5 +38,4 @@ const LinkStyled = styled.a`
   justify-content: center;
   align-items: center;
   flex: 1;
-  box-sizing: border-box;
 `;

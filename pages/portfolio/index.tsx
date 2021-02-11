@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { portfolioItems } from "../../src/data/portfolioItems";
+import { portfolioItems } from "./portfolioItems";
 import { PortfolioListItem } from "../../src/components/portfolio/PortfolioListItem";
+import { DefaultLayout } from "../../src/components/layout/DefaultLayout";
+import Head from "next/head";
+import { throttle } from "../../src/helpers";
 import styled from "styled-components";
 
 interface Props {}
@@ -12,21 +15,40 @@ export default function Index(props: Props) {
   const [h, setH] = useState(0);
   const [index, setIndex] = useState(0);
 
-  const throttle = 500;
-  const time = useRef(-1);
+  const touchStart = useRef(0);
+  const touchEnd = useRef(0);
 
   const wheelEvent = (e: WheelEvent) => {
-    const now = Date.now();
+    if (!!!throttle) return;
 
-    if (time.current !== -1 && now - time.current < throttle) return; // Get out, we haven't waited long enough
+    if (e.deltaY < 0) {
+      scrollUp();
+    } else if (e.deltaY > 0) scrollDown();
+  };
 
-    time.current = now;
+  const touchStartEvent = (e: TouchEvent) => {
+    touchStart.current = e.touches[0].clientY;
+  };
 
-    if (e.deltaY < 0 && y > 0) {
-      setY(y - 1);
-    } else {
-      if (e.deltaY > 0 && y < portfolioItems.length - 1) setY(y + 1);
+  const touchEndEvent = (e: TouchEvent) => {
+    if (!!!throttle) return;
+
+    if (e.changedTouches[0].clientY !== touchEnd.current) {
+      touchEnd.current = e.changedTouches[0].clientY;
+
+      if (touchStart.current > touchEnd.current) {
+        scrollDown();
+      } else if (touchStart.current < touchEnd.current) {
+        scrollUp();
+      }
     }
+  };
+
+  const scrollUp = () => {
+    if (y > 0) setY(y - 1);
+  };
+  const scrollDown = () => {
+    if (y < portfolioItems.length - 1) setY(y + 1);
   };
 
   useEffect(() => {
@@ -39,33 +61,45 @@ export default function Index(props: Props) {
   }, [y]);
 
   return (
-    <Container onWheel={wheelEvent}>
-      <RightMenu>
-        {portfolioItems.map((item, index) => {
-          return (
-            <RighMenuItem
-              key={index}
-              active={index === y}
-              onClick={(e) => setY(index)}
-            />
-          );
-        })}
-      </RightMenu>
-      {portfolioItems.map((item, i) => {
-        return <PortfolioListItem key={i} index={index} item={item} />;
-      })}
-    </Container>
+    <>
+      <Head>
+        <title>Arthur Wosniaki - Portfolio</title>
+      </Head>
+
+      <DefaultLayout>
+        <RightMenu>
+          {portfolioItems.map((item, index) => {
+            return (
+              <RighMenuItem
+                key={index}
+                active={index === y}
+                onClick={() => setY(index)}
+              />
+            );
+          })}
+        </RightMenu>
+        <Container
+          onWheel={wheelEvent}
+          onTouchStart={touchStartEvent}
+          onTouchEnd={touchEndEvent}
+          index={index}
+        >
+          {portfolioItems.map((item, i) => {
+            return <PortfolioListItem key={i} item={item} />;
+          })}
+        </Container>
+      </DefaultLayout>
+    </>
   );
 }
 
 const Container = styled.div`
-  margin-left: 300px;
-  box-sizing: border-box;
-  width: 100% - 300px;
-  // height: 100vh;
   height: 100%;
   scroll-behavior: smooth;
-  overflow: hidden;
+  touch-action: none;
+
+  transition: all 700ms ease 0s;
+  transform: ${({ index }) => `translate3d(0, ${index}px, 0)`};
 
   @media (max-width: 600px) {
     margin-left: 0;
@@ -79,7 +113,6 @@ const RightMenu = styled.div`
   bottom: 0;
   right: 10px;
   margin: auto;
-  box-sizing: border-box;
 
   color: red;
   width: 100px;
@@ -92,7 +125,6 @@ const RightMenu = styled.div`
 `;
 
 const RighMenuItem = styled.div`
-  box-sizing: border-box;
   width: 40px;
   height: 5px;
   background: white;

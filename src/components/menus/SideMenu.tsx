@@ -44,7 +44,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
-  box-sizing: border-box;
   display: flex;
 
   @media (max-width: 600px) {
@@ -57,7 +56,6 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  box-sizing: border-box;
 
   @media (max-width: 600px) {
     display: none;
@@ -70,7 +68,6 @@ const PictureRound = styled.div`
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
-  box-sizing: border-box;
 `;
 
 const Profile = styled.div`
@@ -83,10 +80,8 @@ const Profile = styled.div`
 
 const Avatar = styled.img`
   cursor: pointer;
-  box-sizing: border-box;
 `;
 
 const Name = styled.h2`
   text-transform: uppercase;
-  box-sizing: border-box;
 `;

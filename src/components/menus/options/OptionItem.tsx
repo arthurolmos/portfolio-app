@@ -23,7 +23,6 @@ export function OptionItem(props: OptionItemProps) {
 const ListItem = styled.li`
   color: black;
   padding: 0;
-  box-sizing: border-box;
   margin: auto;
   display: block;
   flex: 1;
@@ -38,7 +37,6 @@ const LinkText = styled.p`
   text-decoration: none;
   cursor: pointer;
   text-transform: uppercase;
-  box-sizing: border-box;
 
   ${({ active }) =>
     active &&

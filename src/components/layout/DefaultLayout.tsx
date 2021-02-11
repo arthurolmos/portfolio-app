@@ -20,20 +20,18 @@ export function DefaultLayout(props: Props) {
 
 const Container = styled.div`
   margin-left: 300px;
-  box-sizing: border-box;
   height: 100%;
 
   @media (max-width: 600px) {
     margin-left: 0;
+    margin-top: 80px;
+    height: calc(100% - 80px);
   }
 `;
 
 const Content = styled.div`
-  // height: 100vh;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
-  padding: 0 40px;
 
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ color }) => color};

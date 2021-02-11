@@ -18,7 +18,9 @@ export function TopMenu(props: Props) {
       <Container>
         <SocialNetwork />
 
-        <LogoContainer>Arthur Wosniaki</LogoContainer>
+        <Link href="/">
+          <LogoContainer>Arthur Wosniaki</LogoContainer>
+        </Link>
 
         <ButtonContainer>
           <CollapseButton onClick={() => setOpen(!open)}>
@@ -41,7 +43,6 @@ const Container = styled.div`
   padding: 15px;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   z-index: 999;
   display: none;
   position: fixed;
@@ -51,7 +52,6 @@ const Container = styled.div`
   height: 80px;
 
   flex-direction: row;
-  box-sizing: border-box;
 
   @media (max-width: 600px) {
     display: flex;
@@ -80,7 +80,6 @@ const CollapsableContainer = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   flex: 1;
-  box-sizing: border-box;
   align-items: center;
   justify-content: flex-end;
 `;
@@ -90,7 +89,6 @@ const CollapseButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 5px 5px;
-  box-sizing: border-box;
 `;
 
 const LogoContainer = styled.div`
@@ -99,4 +97,5 @@ const LogoContainer = styled.div`
   justify-content: center;
   color: black;
   display: flex;
+  cursor: pointer;
 `;
