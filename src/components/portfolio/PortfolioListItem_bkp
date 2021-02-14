@@ -16,9 +16,14 @@ export function PortfolioListItem({ item, index, y }: PortfolioItemProps) {
     <ItemContainer>
       <Background background={backgroundImage} />
       <Content>
-        <TitleContainer>
-          <h1>{title}</h1>
-        </TitleContainer>
+        <Header>
+          <LineContainer>
+            <Line active={index === y} />
+          </LineContainer>
+          <Title>
+            <h1>{title}</h1>
+          </Title>
+        </Header>
 
         <ButtonContainer>
           <Link href={`/portfolio/${title.toLowerCase()}`}>
@@ -30,9 +35,31 @@ export function PortfolioListItem({ item, index, y }: PortfolioItemProps) {
   );
 }
 
-const TitleContainer = styled.div`
+const Header = styled.div`
   display: flex;
   flex: 1;
+  flex-direction: row;
+`;
+
+const Title = styled.div`
+  display: inline-flex;
+  margin-left: 30px;
+  justify-content: flex-end;
+  color: white;
+`;
+
+const LineContainer = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  padding: 40px 0;
+`;
+
+const Line = styled.div`
+  border-top: 5px solid white;
+  border-radius: 0 25px 25px 0;
+  width: ${({ active }) => (active ? "100%" : 0)};
+  transition: width 1s;
 `;
 
 const Background = styled.div`
@@ -76,7 +103,7 @@ const Background = styled.div`
     left: 0;
     background: white;
     content: "";
-    opacity: 0.5;
+    opacity: 0.6;
   }
 `;
 
@@ -111,6 +138,17 @@ const Content = styled.div`
   overflow: hidden;
 `;
 
+const Backdrop = styled.div`
+  position: absolute;
+  top: 2.5em;
+  right: 2.5em;
+  bottom: 2.5em;
+  left: 2.5em;
+  background: white;
+  content: "";
+  opacity: 0.6;
+`;
+
 const Button = styled.button`
   background: black;
   color: white;
@@ -121,11 +159,9 @@ const Button = styled.button`
   width: 100px;
   height: 40px;
   transition: all 0.3s ease;
-  font-weight: bold;
 
   &:hover {
     background: white;
-    color: black;
   }
 
   &:focus {
@@ -139,4 +175,5 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 30px;
+  flex: 1;
 `;
