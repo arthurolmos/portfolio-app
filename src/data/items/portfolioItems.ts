@@ -26,6 +26,7 @@ export const portfolioItems: IPortfolioItem[] = [
     text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet, dui eget rhoncus elementum, velit enim ultricies nisl, vehicula volutpat magna tortor vitae odio. Suspendisse nulla magna, fringilla vitae massa nec, accumsan porttitor dui. In hac habitasse platea dictumst. Maecenas aliquam mauris id metus viverra fermentum. Phasellus consequat a turpis sed rhoncus. Vestibulum vel pellentesque turpis, mollis pulvinar dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Nullam pretium eleifend urna at varius.`,
     logos: [`${logoPath}/lojaintegrada.png`],
+    site: "https://www.lojasanguinaria.com.br",
   },
   {
     thumbnail: `${portfolioPath}/filosofem.jpg`,

@@ -1,8 +1,7 @@
 import { IPortfolioItem } from "../../interfaces/IPortfolioItem";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
-import { useEffect } from "react";
-import { FaChevronLeft, FaGithub, FaGlobeAmericas } from "react-icons/fa";
+import { LinkContainer } from "./LinkContainer";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
@@ -19,18 +18,7 @@ export function PortfolioListItem({ item }: PortfolioItemProps) {
             <Header>
               <h1>{title}</h1>
 
-              <LinkContainer>
-                {site && (
-                  <a href={site} title={site} target="_blank">
-                    <FaGlobeAmericas />
-                  </a>
-                )}
-                {github && (
-                  <a href={github} title={github} target="_blank">
-                    <FaGithub />
-                  </a>
-                )}
-              </LinkContainer>
+              <LinkContainer site={site} github={github} />
             </Header>
 
             <div>{text}</div>
@@ -77,7 +65,7 @@ const LogosContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 30px;
+  height: 20px;
   margin: 0 10px;
 `;
 
@@ -189,25 +177,4 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px;
-`;
-
-const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  flex: 1;
-
-  a {
-    color: black;
-    font-size: 30px;
-  }
-
-  a:first-child {
-    margin-right: 30px;
-  }
-
-  a:hover {
-    opacity: 0.8;
-  }
 `;

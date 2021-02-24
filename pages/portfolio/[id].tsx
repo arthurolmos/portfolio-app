@@ -5,6 +5,7 @@ import { FaChevronLeft, FaGithub, FaGlobeAmericas } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styled from "styled-components";
+import { LinkContainer } from "../../src/components/portfolio/LinkContainer";
 
 export function getStaticPaths() {
   const paths = getAllFilesIds("portfolio");
@@ -44,14 +45,7 @@ export default function Portfolio({ fileData }: { fileData: IFileData }) {
               <Title>
                 <h1>{title}</h1>
               </Title>
-              <LinkContainer>
-                <a href={site} title={site} target="_blank">
-                  <FaGlobeAmericas />
-                </a>
-                <a href={github} title={github} target="_blank">
-                  <FaGithub />
-                </a>
-              </LinkContainer>
+              <LinkContainer site={site} github={github} />
             </TitleContainer>
             <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
           </Body>
@@ -124,33 +118,6 @@ const FaChevronLeftStyled = styled(FaChevronLeft)`
 
   &:hover {
     opacity: 0.6;
-  }
-`;
-
-const LinkContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px;
-  flex: 1;
-
-  a {
-    color: black;
-    font-size: 30px;
-  }
-
-  a:first-child {
-    margin-right: 30px;
-  }
-
-  a:hover {
-    opacity: 0.8;
-  }
-
-  @media (max-width: 600px) {
-    justify-content: flex-start;
-    padding: 0;
   }
 `;
 
