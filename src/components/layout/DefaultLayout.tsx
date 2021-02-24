@@ -20,21 +20,21 @@ export function DefaultLayout(props: Props) {
 
 const Container = styled.div`
   margin-left: 300px;
-  height: 100%;
 
   @media (max-width: 600px) {
     margin-left: 0;
-    margin-top: 80px;
-    height: calc(100% - 80px);
   }
 `;
 
 const Content = styled.div`
-  height: 100%;
   width: 100%;
 
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ color }) => color};
+
+  @media (max-width: 600px) {
+    padding-top: 80px;
+  }
 `;
 
 Content.defaultProps = {

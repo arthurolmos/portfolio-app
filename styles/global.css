@@ -6,13 +6,19 @@
 
 html,
 body {
-  color: white;
+  color: black;
   background-color: black;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   position: relative;
+  background: url("/images/background/bg4_dark.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 ::selection {

@@ -52,7 +52,7 @@ const Container = styled.div`
   &::before {
     z-index: -1;
     content: "";
-    // opacity: 0.7; //para caso tenha um bg diferente
+    opacity: 0.7; //para caso tenha um bg diferente
     background: white;
     position: fixed;
     top: 0;
