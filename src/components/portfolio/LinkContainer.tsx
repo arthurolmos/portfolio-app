@@ -38,8 +38,8 @@ const Container = styled.div`
     font-size: 30px;
   }
 
-  a:first-child {
-    margin-right: 30px;
+  a:last-child {
+    margin-left: 30px;
   }
 
   a:hover {

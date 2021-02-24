@@ -83,7 +83,22 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 40px;
+  padding: 40px 80px;
+  text-align: justify;
+  text-justify: inter-word;
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
+`;
+
+const FaChevronLeftStyled = styled(FaChevronLeft)`
+  font-size: 35px;
+  transition: all 1s ease;
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const BackButton = styled.div`
@@ -98,6 +113,7 @@ const BackButton = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 5px 5px 10px gray;
+  transition: all 0.5s ease;
 
   background: white;
   cursor: pointer;
@@ -107,17 +123,13 @@ const BackButton = styled.div`
     width: 50px;
     height: 50px;
   }
-`;
-
-const FaChevronLeftStyled = styled(FaChevronLeft)`
-  font-size: 35px;
-
-  @media (max-width: 600px) {
-    font-size: 20px;
-  }
 
   &:hover {
-    opacity: 0.6;
+    ${FaChevronLeftStyled} {
+      color: white;
+    }
+
+    background: black;
   }
 `;
 
