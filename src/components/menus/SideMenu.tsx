@@ -38,7 +38,6 @@ const Container = styled.div`
   left: 0;
   width: 300px;
   margin: 0;
-  background: white;
   color: black;
   padding: 50px 25px;
   justify-content: center;
@@ -48,6 +47,19 @@ const Container = styled.div`
 
   @media (max-width: 600px) {
     display: none;
+  }
+
+  &::before {
+    z-index: -1;
+    content: "";
+    // opacity: 0.7; //para caso tenha um bg diferente
+    background: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    margin: 0;
   }
 `;
 
@@ -68,6 +80,12 @@ const PictureRound = styled.div`
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const Profile = styled.div`

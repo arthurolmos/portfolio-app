@@ -45,10 +45,10 @@ export default function Portfolio({ fileData }: { fileData: IFileData }) {
                 <h1>{title}</h1>
               </Title>
               <LinkContainer>
-                <a href={site} title={site}>
+                <a href={site} title={site} target="_blank">
                   <FaGlobeAmericas />
                 </a>
-                <a href={github} title={github}>
+                <a href={github} title={github} target="_blank">
                   <FaGithub />
                 </a>
               </LinkContainer>
@@ -89,7 +89,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding: 0 20px;
+  padding: 40px;
 `;
 
 const BackButton = styled.div`
@@ -147,12 +147,21 @@ const LinkContainer = styled.div`
   a:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 600px) {
+    justify-content: flex-start;
+    padding: 0;
+  }
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.div`

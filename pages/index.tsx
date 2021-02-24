@@ -95,7 +95,7 @@ const RightColumn = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 40px;
+  padding: 30px;
 `;
 
 const Introduction = styled.div``;

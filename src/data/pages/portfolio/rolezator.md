@@ -15,7 +15,7 @@ Também é possível bloquear sugestões que não interessam ao usuário de jeit
 
 ...ou vai?
 
-## Desenvolvido em:
+## Tecnologias:
 
 ### Frontend
 

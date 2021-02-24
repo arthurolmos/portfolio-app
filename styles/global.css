@@ -12,14 +12,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  height: 100%;
-  overflow: hidden;
   position: relative;
-}
-
-body > div:first-child,
-div#__next {
-  height: 100%;
 }
 
 ::selection {

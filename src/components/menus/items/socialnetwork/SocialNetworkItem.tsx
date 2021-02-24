@@ -10,7 +10,7 @@ export function SocialNetworkItem({ item }: Props) {
 
   return (
     <LinkStyled href={url} target="_blank">
-      <SocialNetworkLogo src={src} alt={alt} />
+      <SocialNetworkLogo src={src[0]} alt={alt} />
     </LinkStyled>
   );
 }

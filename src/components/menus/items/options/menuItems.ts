@@ -5,16 +5,16 @@ export const menuItems: IMenuItem[] = [
     option: "portfolio",
     url: "/portfolio",
   },
-  {
-    option: "blog",
-    url: "blog",
-  },
+  // {
+  //   option: "blog",
+  //   url: "blog",
+  // },
   {
     option: "cv",
-    url: "contact",
+    url: "cv",
   },
   {
-    option: "contact",
+    option: "contato",
     url: "contact",
   },
 ];

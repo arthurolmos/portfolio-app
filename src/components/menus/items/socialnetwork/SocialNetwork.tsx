@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SocialNetworkItem } from "./SocialNetworkItem";
-import { socialNetworkItems } from "./socialNetworkItems";
+import { socialNetworkItems } from "../../../../data/items";
 
 interface Props {}
 

@@ -2,82 +2,153 @@ import { IPortfolioItem } from "../../interfaces/IPortfolioItem";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { useEffect } from "react";
+import { FaChevronLeft, FaGithub, FaGlobeAmericas } from "react-icons/fa";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
-  index: number;
-  y: number;
 }
 
-export function PortfolioListItem({ item, index, y }: PortfolioItemProps) {
-  const { backgroundImage, title, text } = item;
+export function PortfolioListItem({ item }: PortfolioItemProps) {
+  const { thumbnail, title, text, logos, site, github } = item;
 
   return (
     <ItemContainer>
-      <Background background={backgroundImage} />
       <Content>
-        <TitleContainer>
-          <h1>{title}</h1>
-        </TitleContainer>
+        <UpperRow>
+          <Body>
+            <Header>
+              <h1>{title}</h1>
 
-        <ButtonContainer>
-          <Link href={`/portfolio/${title.toLowerCase()}`}>
-            <Button>Ver Mais</Button>
-          </Link>
-        </ButtonContainer>
+              <LinkContainer>
+                {site && (
+                  <a href={site} title={site} target="_blank">
+                    <FaGlobeAmericas />
+                  </a>
+                )}
+                {github && (
+                  <a href={github} title={github} target="_blank">
+                    <FaGithub />
+                  </a>
+                )}
+              </LinkContainer>
+            </Header>
+
+            <div>{text}</div>
+          </Body>
+
+          <ThumbnailContainer>
+            <Thumbnail src={thumbnail} />
+          </ThumbnailContainer>
+        </UpperRow>
+
+        <LowerRow>
+          <LogosContainer>
+            {logos.map((logo) => {
+              return <Logo src={logo} />;
+            })}
+          </LogosContainer>
+        </LowerRow>
+
+        <Row>
+          <ButtonContainer>
+            <Link href={`/portfolio/${title.toLowerCase()}`}>
+              <Button>Ver Mais</Button>
+            </Link>
+          </ButtonContainer>
+        </Row>
       </Content>
     </ItemContainer>
   );
 }
 
-const TitleContainer = styled.div`
+const Header = styled.div`
   display: flex;
   flex: 1;
+  width: 100%;
 `;
 
-const Background = styled.div`
+const LogosContainer = styled.div`
   width: 100%;
-  height: 100%;
-  position: relative;
+  display: flex;
+  margin-top: 15px;
 
-  ${({ background }) =>
-    background &&
-    `
-    background: url(${background}) 50%/ cover
-                border-box
-                padding-box;
-  `};
+  display: table;
+  text-align: center;
+`;
 
-  border: solid 2.5em rgba(0, 0, 0, 0.03);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 2px 2px 17px rgba(0, 0, 0, 0.35),
-    2px 2px 25px rgba(0, 0, 0, 0.5);
+const Logo = styled.img`
+  height: 30px;
+  margin: 0 10px;
+`;
 
-  &::before {
-    z-index: -1;
-    position: absolute;
-    top: -2.5em;
-    right: -2.5em;
-    bottom: -2.5em;
-    left: -2.5em;
-    border: inherit;
-    border-color: transparent;
-    background: inherit;
-    background-clip: border-box;
-    filter: blur(3px);
-    clip-path: inset(0);
-    content: "";
+const Body = styled.div`
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  margin-right: 50px;
+  margin-left: 150px;
+  text-align: justify;
+  text-justify: inter-word;
+
+  @media (max-width: 1200px) {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
   }
+`;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: white;
-    content: "";
-    opacity: 0.5;
+const ThumbnailContainer = styled.div`
+  display: flex;
+
+  flex: 1;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Thumbnail = styled.img`
+  width: 100%;
+
+  @media (max-width: 600px) {
+    height: 140px;
   }
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+const UpperRow = styled(Row)`
+  @media (max-width: 1200px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+const LowerRow = styled(Row)`
+  margin-top: 30px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+`;
+
+const Content = styled.div`
+  padding: 15px;
+  color: white;
+  display: flex;
+  min-height: 200px;
+  flex-direction: column;
+
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 `;
 
 const ItemContainer = styled.div`
@@ -86,29 +157,7 @@ const ItemContainer = styled.div`
   height: 100%;
   display: block;
   position: relative;
-  z-index: 1;
-
-  @media (max-width: 600px) {
-    margin-top: 80px;
-  }
-`;
-
-const Content = styled.div`
-  padding: 15px;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  opacity: 1;
-  position: absolute;
-  top: 2.5em;
-  right: 2.5em;
-  bottom: 2.5em;
-  left: 2.5em;
-  z-index: 99;
-
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  overflow: hidden;
+  margin-bottom: 25px;
 `;
 
 const Button = styled.button`
@@ -137,6 +186,28 @@ const Button = styled.button`
 const ButtonContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+
+  a {
+    color: black;
+    font-size: 30px;
+  }
+
+  a:first-child {
+    margin-right: 30px;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
 `;
