@@ -1,6 +1,6 @@
 ---
-title: "Rolezator"
-backgroundImage: "/images/portfolio/rolezator-app/rolezator.jpg"
+title: "Loja Sanguinária"
+backgroundImage: "/images/portfolio/ojasanguinaria/home.jpg"
 site: "https://rolezator.netlify.app/"
 github: "https://github.com/arthurolmos/rolezator-full-app"
 ---

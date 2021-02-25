@@ -47,8 +47,8 @@ export const portfolioItems: IPortfolioItem[] = [
       `/images/logos/ts.png`,
       `/images/logos/vercel.png`,
     ],
-    site: "https://portfolio-app-psi.vercel.app/",
-    github: "https://portfolio-app-psi.vercel.app/",
+    site: "https://arthurwosniaki.vercel.app/",
+    github: "https://github.com/arthurolmos/portfolio-app",
   },
   {
     title: "Loja Sanguinária",
