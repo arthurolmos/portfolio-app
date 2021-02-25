@@ -72,8 +72,8 @@ const CollapsableContainer = styled.div`
 
   @media (max-width: 600px) {
     display: flex;
-    height: ${({ isOpen }) => (isOpen ? "240px" : "0")};
-    transition: height 0.5s;
+    max-height: ${({ isOpen }) => (isOpen ? "240px" : "0")};
+    transition: max-height 0.5s;
   }
 `;
 
@@ -89,6 +89,12 @@ const CollapseButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 5px 5px;
+  background: transparent;
+  border-radius: 15%;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -98,4 +104,9 @@ const LogoContainer = styled.div`
   color: black;
   display: flex;
   cursor: pointer;
+`;
+
+const FaBarsStyled = styled(FaBars)`
+  color: transparent;
+  border: 1px solid black;
 `;

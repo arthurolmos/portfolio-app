@@ -11,10 +11,10 @@ export const menuItems: IMenuItem[] = [
   // },
   {
     option: "cv",
-    url: "cv",
+    url: "/cv",
   },
   {
     option: "contato",
-    url: "contact",
+    url: "/contact",
   },
 ];

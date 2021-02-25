@@ -8,7 +8,7 @@ interface PortfolioItemProps {
 }
 
 export function PortfolioItem({ item }: PortfolioItemProps) {
-  const { thumbnail, title, text, logos, site, github } = item;
+  const { thumbnail, title, text, logos, site, github, url } = item;
 
   return (
     <ItemContainer>
@@ -39,7 +39,7 @@ export function PortfolioItem({ item }: PortfolioItemProps) {
 
         <Row>
           <ButtonContainer>
-            <Link href={`/portfolio/${title.toLowerCase()}`}>
+            <Link href={`/portfolio/${url}`}>
               <Button>Ver Mais</Button>
             </Link>
           </ButtonContainer>

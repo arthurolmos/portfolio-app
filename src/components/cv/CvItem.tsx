@@ -17,49 +17,32 @@ export function CvItem({ item }: CvItemProps) {
   return (
     <CollapsibleContainer open={open}>
       <Content>
-        <Divisor>
-          <Header>
-            <Title>{title}</Title>
-            <Subtitle>
-              {subtitle}
-              <span>{period && ` - ${period}`}</span>
-            </Subtitle>
-            <ButtonContainer>
-              {open ? (
-                <FaChevronUpStyled onClick={toggle} />
-              ) : (
-                <FaChevronDownStyled onClick={toggle} />
-              )}
-            </ButtonContainer>
-          </Header>
+        <Header>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Period>{period}</Period>
+        </Header>
 
-          <LogoContainer>
-            <img src={logo} width={200} />
-          </LogoContainer>
-        </Divisor>
+        {description && (
+          <Info>
+            <h3>Descrição:</h3>
+            <Description>{description.trim()}</Description>
+          </Info>
+        )}
 
-        <h3>Resumo:</h3>
-        <Description>{description.trim()}</Description>
+        {description && (
+          <ButtonContainer>
+            {open ? (
+              <FaChevronUpStyled onClick={toggle} />
+            ) : (
+              <FaChevronDownStyled onClick={toggle} />
+            )}
+          </ButtonContainer>
+        )}
       </Content>
     </CollapsibleContainer>
   );
 }
-
-const Divisor = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const LogoContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 1060px) {
-    display: none;
-  }
-`;
 
 const FaChevronUpStyled = styled(FaChevronUp)`
   cursor: pointer;
@@ -79,28 +62,50 @@ const FaChevronDownStyled = styled(FaChevronDown)`
 
 const ButtonContainer = styled.div`
   position: absolute;
-  display: flex;
   justify-content: center;
   align-items: center;
   left: 0;
   right: 0;
   bottom: 10px;
+  display: none;
+
+  @media (max-width: 600px) {
+    display: flex;
+  }
 `;
 
 const Content = styled.div`
   padding: 15px;
   color: black;
   display: flex;
-  min-height: 200px;
-  flex-direction: column;
+  flex-direction: row;
 
   text-overflow: ellipsis;
   word-wrap: break-word;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Header = styled.div`
-  height: 200px;
+  display: block;
   flex: 1;
+  padding: 0 15px;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+`;
+
+const Info = styled.div`
+  display: block;
+  flex: 1;
+  padding: 0 15px;
+
+  @media (max-width: 600px) {
+    padding: 30px 0;
+  }
 `;
 
 const CollapsibleContainer = styled.div`
@@ -113,14 +118,18 @@ const CollapsibleContainer = styled.div`
   border-radius: 25px;
   transition: all 0.5s;
 
-  max-height: 200px;
+  max-height: 100%;
   overflow: hidden;
 
-  ${({ open }) =>
-    open &&
-    `
-    max-height: 800px;
-  `}
+  @media (max-width: 600px) {
+    max-height: 220px;
+
+    ${({ open }) =>
+      open &&
+      `
+      max-height: 1000px;
+    `}
+  }
 
   &::before {
     z-index: -1;
@@ -140,12 +149,12 @@ const CollapsibleContainer = styled.div`
   }
 `;
 
-const Title = styled.h3``;
+const Title = styled.h2``;
 
-const Subtitle = styled.h4`
-  & > span {
-    font-style: italic;
-  }
+const Subtitle = styled.h4``;
+
+const Period = styled.h5`
+  font-style: italic;
 `;
 
 const Description = styled.div`
