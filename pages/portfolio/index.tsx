@@ -1,11 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { portfolioItems } from "../../src/data/items/portfolioItems";
-import { PortfolioListItem } from "../../src/components/portfolio/PortfolioListItem";
+import { portfolioItems } from "../../src/data/items";
+import { PortfolioItem } from "../../src/components/portfolio/PortfolioItem";
 import { DefaultLayout, TitleAndBodyLayout } from "../../src/components/layout";
 import Head from "next/head";
-import { throttle } from "../../src/helpers";
 import styled from "styled-components";
-import { FaFileExport } from "react-icons/fa";
 
 interface Props {}
 
@@ -20,7 +17,7 @@ export default function Index(props: Props) {
         <TitleAndBodyLayout title="Portfolio">
           <PortfolioLayout>
             {portfolioItems.map((item, i) => {
-              return <PortfolioListItem key={i} item={item} />;
+              return <PortfolioItem key={i} item={item} />;
             })}
           </PortfolioLayout>
         </TitleAndBodyLayout>

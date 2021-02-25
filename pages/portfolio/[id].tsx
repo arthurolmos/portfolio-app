@@ -1,11 +1,11 @@
-import { DefaultLayout } from "../../src/components/layout/DefaultLayout";
 import { getAllFilesIds, getFileData } from "../../src/lib";
 import { IFileData } from "../../src/interfaces";
-import { FaChevronLeft, FaGithub, FaGlobeAmericas } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import styled from "styled-components";
+import { DefaultLayout } from "../../src/components/layout";
 import { LinkContainer } from "../../src/components/portfolio/LinkContainer";
+import styled from "styled-components";
 
 export function getStaticPaths() {
   const paths = getAllFilesIds("portfolio");

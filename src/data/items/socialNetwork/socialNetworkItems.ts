@@ -1,4 +1,4 @@
-import { ISocialNetworkItem } from "../../interfaces";
+import { ISocialNetworkItem } from "../../../interfaces";
 
 export const socialNetworkItems: ISocialNetworkItem[] = [
   {

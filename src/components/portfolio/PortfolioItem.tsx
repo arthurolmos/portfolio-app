@@ -1,13 +1,13 @@
-import { IPortfolioItem } from "../../interfaces/IPortfolioItem";
+import { IPortfolioItem } from "../../interfaces";
 import Link from "next/link";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { LinkContainer } from "./LinkContainer";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
 }
 
-export function PortfolioListItem({ item }: PortfolioItemProps) {
+export function PortfolioItem({ item }: PortfolioItemProps) {
   const { thumbnail, title, text, logos, site, github } = item;
 
   return (
@@ -21,7 +21,7 @@ export function PortfolioListItem({ item }: PortfolioItemProps) {
               <LinkContainer site={site} github={github} />
             </Header>
 
-            <div>{text}</div>
+            <Description>{text}</Description>
           </Body>
 
           <ThumbnailContainer>
@@ -31,8 +31,8 @@ export function PortfolioListItem({ item }: PortfolioItemProps) {
 
         <LowerRow>
           <LogosContainer>
-            {logos.map((logo) => {
-              return <Logo src={logo} />;
+            {logos.map((logo, index) => {
+              return <Logo src={logo} key={index} />;
             })}
           </LogosContainer>
         </LowerRow>
@@ -51,7 +51,6 @@ export function PortfolioListItem({ item }: PortfolioItemProps) {
 
 const Header = styled.div`
   display: flex;
-  flex: 1;
   width: 100%;
 `;
 
@@ -75,16 +74,18 @@ const Body = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: flex-start;
-  margin-right: 50px;
-  margin-left: 150px;
-  text-align: justify;
-  text-justify: inter-word;
+  padding: 0 40px;
 
   @media (max-width: 1200px) {
-    margin: 0;
+    padding: 0;
     align-items: center;
     justify-content: center;
   }
+`;
+
+const Description = styled.div`
+  text-align: justify;
+  text-justify: inter-word;
 `;
 
 const ThumbnailContainer = styled.div`
@@ -140,12 +141,30 @@ const Content = styled.div`
 `;
 
 const ItemContainer = styled.div`
-  background: white;
   width: 100%;
   height: 100%;
   display: block;
   position: relative;
   margin-bottom: 25px;
+  z-index: 0;
+  border-radius: 25px;
+
+  &::before {
+    z-index: -1;
+    background: white;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.9;
+    border-radius: 15px;
+
+    @media (max-width: 600px) {
+      // border-radius: 0;
+    }
+  }
 `;
 
 const Button = styled.button`

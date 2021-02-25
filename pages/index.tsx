@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { DefaultLayout } from "../src/components/layout/DefaultLayout";
+import { DefaultLayout } from "../src/components/layout";
 import Link from "next/link";
 import styled from "styled-components";
 

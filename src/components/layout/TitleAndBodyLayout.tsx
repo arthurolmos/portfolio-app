@@ -31,8 +31,10 @@ const Title = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   padding: 35px;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 const Body = styled.div`
@@ -40,9 +42,9 @@ const Body = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 35px;
+  padding: 0 35px;
 
   @media (max-width: 600px) {
-    padding: 0;
+    padding: 15px;
   }
 `;
