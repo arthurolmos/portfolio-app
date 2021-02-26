@@ -75,6 +75,8 @@ const Header = styled.div`
     background: url(${background}) 50%/ cover
                   border-box
                   padding-box;
+    // background-position: top;
+      
   `}
 
   @media(max-width: 600px) {

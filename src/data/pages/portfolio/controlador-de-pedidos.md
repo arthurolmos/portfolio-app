@@ -1,6 +1,6 @@
 ---
-title: "Loja Sanguinária"
-backgroundImage: "/images/portfolio/ojasanguinaria/home.jpg"
+title: "Trainometer"
+backgroundImage: "/images/portfolio/trainometer/header.jpg"
 site: "https://rolezator.netlify.app/"
 github: "https://github.com/arthurolmos/rolezator-full-app"
 ---

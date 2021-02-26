@@ -54,8 +54,7 @@ export const portfolioItems: IPortfolioItem[] = [
     title: "Loja Sanguinária",
     url: "loja-sanguinaria",
     thumbnail: `/images/portfolio/lojasanguinaria/home.jpg`,
-    text: `Site da Loja Sanguinária, desenvolvido por mim utilizando o framework da Loja Integrada.
-    Criação do logo, background, identidade visual das cores e alguns ajustes especiais diretamente 
+    text: `Site da Loja Sanguinária, estilizado por mim. Criação do logo, background, identidade visual das cores e alguns ajustes especiais diretamente 
     na estilização da pagina.`,
     logos: [`/images/logos/lojaintegrada.png`],
     site: "https://www.lojasanguinaria.com.br",
