@@ -14,8 +14,6 @@ portfolio.
 
 Escolhi desenvolver em NextJS para estudar melhor o framework que está bastante em alta na comunidade do React atualmente, e também pelo seu hosting na Vercel.
 
-Esse background de northern lights eu achei em um site de imagens free na net.
-
 ## Tecnologias:
 
 - ReactJS

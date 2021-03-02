@@ -1,19 +1,18 @@
 ---
 title: "Trainometer"
-backgroundImage: "/images/portfolio/trainometer/header.jpg"
-site: "https://rolezator.netlify.app/"
-github: "https://github.com/arthurolmos/rolezator-full-app"
+backgroundImage: "/images/portfolio/trainometer/banner.jpg"
+github: "https://github.com/arthurolmos/trainometer"
 ---
 
 ## Descrição
 
-Website/ app criado para oferecer sugestões naqueles momentos de indecisão. Gera opções de rolês para comer, sair ou fazer alguma coisa.
+O Trainometer é um aplicativo para registrar o histórico e o progresso dos treinos de academia do usuário.
 
-Oferece ao usuário também se logar utilizando uma conta Google para que o usuário cadastre lugares que ele deseja conhecer. Fiz isso pois eu mesmo já passei em frente ou tive sugestões de lugares por amigos que queria conhecer e que, com o passar do tempo, acabei esquecendo. Ele usa a API do GoogleMaps para pegar o endereço e salva na sua Lista de Sugestões.
+O app permite que o usuário insira seus treinos e os monitore, inserindo a carga e as repetições realizada em cada dia de treino e podendo consultar o historico para saber o quanto ele evoluiu naquele período.
 
-Também é possível bloquear sugestões que não interessam ao usuário de jeito nenhum. Por exemplo: um rockeiro não vai se interessar por uma sugestão de ir ao baile funk...
+Foi o primeiro app que desenvolvi, quando ainda usava Java. Nesse mesmo período estava começando a ir na academia e nela eles usavam fichinha de papel para marcar os treinos (academias de bairro costumam fazer isso ainda), então resolvi desenvolver um app para não ficar carregando aquele papel de um lado para o outro.
 
-...ou vai?
+O resultado final foi bem satisfatório. Utilizei o app por uns bons anos e repassei a alguns amigos que o utilizavam também. Conforme fui evoluindo dentro da academia, não senti mais necessidade de utilizá-lo, e aliado com a quantidade de trabalho que tive desde então não tive mais oportunidade de aprimora-lo, mas está nos planos do futuro reescrevê-lo em RN e publicar no Store.
 
 ## Tecnologias:
 

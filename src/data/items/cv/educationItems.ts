@@ -2,8 +2,8 @@ import { ICvItem } from "../../../interfaces/ICvItem";
 
 export const educationItems: ICvItem[] = [
   {
-    title: "FATEC São Caetano do Sul - Antonio Russo",
-    subtitle: "Análise e Desenvolvimento de Sistemas",
+    title: "Análise e Desenvolvimento de Sistemas",
+    institution: "FATEC São Caetano do Sul - Antonio Russo",
     period: "Junho/2013 - Dezembro/2018",
     logo: "/images/logos/fatec_full.png",
     // description:
@@ -16,8 +16,8 @@ export const educationItems: ICvItem[] = [
   },
 
   {
-    title: "SENAI Theobaldo De Nigris",
-    subtitle: "Tecnologia em Produção Gráfica",
+    title: "Tecnologia em Produção Gráfica",
+    institution: "SENAI Theobaldo De Nigris",
     period: "Janeiro/2007 - Junho/2011",
     logo: "/images/logos/senai.png",
     // description:

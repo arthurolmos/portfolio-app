@@ -1,6 +1,7 @@
 import React from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ICvItem } from "../../interfaces";
+import { CollapsibleItemLayout } from "../layout";
 import styled from "styled-components";
 
 interface CvItemProps {
@@ -8,18 +9,18 @@ interface CvItemProps {
 }
 
 export function CvItem({ item }: CvItemProps) {
-  const { title, subtitle, period, description, logo } = item;
+  const { title, institution, period, description, logo } = item;
 
   const [open, setOpen] = React.useState(false);
 
   const toggle = () => setOpen(!open);
 
   return (
-    <CollapsibleContainer open={open}>
+    <CollapsibleItemLayout open={open}>
       <Content>
         <Header>
           <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          <Institution>{institution}</Institution>
           <Period>{period}</Period>
         </Header>
 
@@ -40,7 +41,7 @@ export function CvItem({ item }: CvItemProps) {
           </ButtonContainer>
         )}
       </Content>
-    </CollapsibleContainer>
+    </CollapsibleItemLayout>
   );
 }
 
@@ -108,50 +109,17 @@ const Info = styled.div`
   }
 `;
 
-const CollapsibleContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-  margin-bottom: 25px;
-  z-index: 0;
-  border-radius: 25px;
-  transition: all 0.5s;
-
-  max-height: 100%;
-  overflow: hidden;
-
+const Title = styled.h2`
   @media (max-width: 600px) {
-    max-height: 220px;
-
-    ${({ open }) =>
-      open &&
-      `
-      max-height: 1000px;
-    `}
-  }
-
-  &::before {
-    z-index: -1;
-    background: white;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    opacity: 0.9;
-    border-radius: 15px;
-
-    @media (max-width: 600px) {
-      border-radius: 0;
-    }
+    font-size: 20px;
   }
 `;
 
-const Title = styled.h2``;
-
-const Subtitle = styled.h4``;
+const Institution = styled.h4`
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+`;
 
 const Period = styled.h5`
   font-style: italic;

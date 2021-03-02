@@ -5,9 +5,9 @@ export const portfolioItems: IPortfolioItem[] = [
     title: "Rolezator",
     url: "rolezator-app",
     thumbnail: `/images/portfolio/rolezator-app/rolezator.jpg`,
-    text: `Site que oferece sugestões de passeios, comidas e ações aleatoriamente, de acordo com a pergunta feita pelo usuário. 
-    Também permite que o usuário logue utilizando uma conta Google para acessar opções personalizadas.
-    `,
+    text:
+      "Site que oferece sugestões de passeios, comidas e ações, com o objetivo de ajudar " +
+      "o usuário em momentos de indecisão.",
     logos: [
       `/images/logos/nodejs.png`,
       `/images/logos/reactjs.png`,
@@ -23,10 +23,9 @@ export const portfolioItems: IPortfolioItem[] = [
     title: "Controlador de Pedidos",
     url: "controlador-de-pedidos",
     thumbnail: `/images/portfolio/filosofem.jpg`,
-    text: `Aplicativo para controle de vendas de lojas virtuais pequenas (ex: lojas de Instagram de pessoas físicas), 
-    substituindo planilhas e facilitando a portabilidade.\n
-    Registra as vendas, compras, pedidos pagos e entregues. Apresenta o balanço mensal, total e personalizado (filtrado).
-    `,
+    text:
+      "Aplicativo para controle de vendas de lojas virtuais pequenas (ex: lojas pessoais de Instagram), " +
+      "substituindo planilhas e facilitando a portabilidade.\n",
     logos: [
       `/images/logos/nodejs.png`,
       `/images/logos/react-native.png`,
@@ -39,7 +38,7 @@ export const portfolioItems: IPortfolioItem[] = [
     title: "Arthur Wosniaki - Portfolio",
     url: "portfolio-app",
     thumbnail: `/images/portfolio/portfolio-app/portfolio.jpg`,
-    text: `Meu próprio site de portfolio, aonde posso apresentar meus trabalhos.`,
+    text: `Meu próprio site de portfolio, para apresentar meus trabalhos.`,
     logos: [
       `/images/logos/nodejs.png`,
       `/images/logos/reactjs.png`,
@@ -54,17 +53,21 @@ export const portfolioItems: IPortfolioItem[] = [
     title: "Loja Sanguinária",
     url: "loja-sanguinaria",
     thumbnail: `/images/portfolio/lojasanguinaria/home.jpg`,
-    text: `Site da Loja Sanguinária, estilizado por mim. Criação do logo, background, identidade visual das cores e alguns ajustes especiais diretamente 
-    na estilização da pagina.`,
+    text:
+      "Site da Loja Sanguinária, estilizado por mim.\n" +
+      "Criação do logo, background, identidade visual das cores e alguns ajustes especiais diretamente " +
+      "na estilização da pagina.",
     logos: [`/images/logos/lojaintegrada.png`],
     site: "https://www.lojasanguinaria.com.br",
   },
   {
     title: "Trainometer",
     url: "trainometer",
-    thumbnail: `/images/portfolio/swamp.jpg`,
-    text: `Aplicativo para registro de treinos. Registra os exercícios, as séries x repetições, o período 
-    do treino, e a execução do treino, mantendo um histórico aonde é possível ver o progresso do atleta.`,
+    thumbnail: `/images/portfolio/trainometer/banner.jpg`,
+    text:
+      "Aplicativo para registro de treinos.\n" +
+      "Registra os exercícios, as séries x repetições, o período e a execução do treino, " +
+      "mantendo um histórico aonde é possível ver o progresso do atleta.",
     logos: [`/images/logos/java.png`, `/images/logos/android.svg`],
     github: "https://portfolio-app-psi.vercel.app/",
   },

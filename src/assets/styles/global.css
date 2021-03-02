@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   color: black;
   background-color: black;
@@ -17,11 +22,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
   overflow-y: scroll;
 }
 
 ::selection {
   color: black;
   background: white;
+}
+
+input,
+div,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
 }

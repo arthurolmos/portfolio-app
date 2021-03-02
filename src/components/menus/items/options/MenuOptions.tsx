@@ -25,7 +25,7 @@ export function MenuOptions(props: Props) {
               key={option}
               link={url}
               text={option.toUpperCase()}
-              active={mainPath === option.replace("/", "").toLowerCase()}
+              active={mainPath === url.replace("/", "").toLowerCase()}
               close={close}
             />
           );

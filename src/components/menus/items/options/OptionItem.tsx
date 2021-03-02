@@ -41,6 +41,8 @@ const LinkText = styled.p`
   ${({ active }) =>
     active &&
     `
+    font-weight: bold;
+    
 @media (min-width: 601px) {
   &::after {
     content:  " >";

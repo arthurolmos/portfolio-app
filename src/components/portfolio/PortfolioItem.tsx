@@ -1,7 +1,8 @@
 import { IPortfolioItem } from "../../interfaces";
 import Link from "next/link";
-import styled from "styled-components";
 import { LinkContainer } from "./LinkContainer";
+import { ItemLayout } from "../layout";
+import styled from "styled-components";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
@@ -11,7 +12,7 @@ export function PortfolioItem({ item }: PortfolioItemProps) {
   const { thumbnail, title, text, logos, site, github, url } = item;
 
   return (
-    <ItemContainer>
+    <ItemLayout>
       <Content>
         <UpperRow>
           <Body>
@@ -45,7 +46,7 @@ export function PortfolioItem({ item }: PortfolioItemProps) {
           </ButtonContainer>
         </Row>
       </Content>
-    </ItemContainer>
+    </ItemLayout>
   );
 }
 
@@ -84,6 +85,7 @@ const Body = styled.div`
 const Description = styled.div`
   text-align: justify;
   text-justify: inter-word;
+  white-space: pre-wrap;
 `;
 
 const ThumbnailContainer = styled.div`
@@ -136,33 +138,6 @@ const Content = styled.div`
 
   text-overflow: ellipsis;
   word-wrap: break-word;
-`;
-
-const ItemContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-  margin-bottom: 25px;
-  z-index: 0;
-  border-radius: 25px;
-
-  &::before {
-    z-index: -1;
-    background: white;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    opacity: 0.9;
-    border-radius: 15px;
-
-    @media (max-width: 600px) {
-      // border-radius: 0;
-    }
-  }
 `;
 
 const Button = styled.button`

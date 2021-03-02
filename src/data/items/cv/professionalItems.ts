@@ -2,8 +2,8 @@ import { ICvItem } from "../../../interfaces/ICvItem";
 
 export const professionalItems: ICvItem[] = [
   {
-    title: "TOTVS",
-    subtitle: "Analista de Sistemas",
+    title: "Analista de Sistemas",
+    institution: "TOTVS",
     period: "Abril/2017 - Atualmente",
     logo: "/images/logos/fatec_full.png",
     description:

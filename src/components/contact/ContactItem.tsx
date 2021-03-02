@@ -3,11 +3,13 @@ import { ISocialNetworkItem } from "../../interfaces";
 import styled from "styled-components";
 
 export function ContactItem({ item }: { item: ISocialNetworkItem }) {
+  const { url, alt, src } = item;
+
   return (
-    <Container href={item.url} target="_blank">
-      <Link>
-        <Logo src={item.src[1]} alt={item.alt} width={50} />
-        <span style={{ textTransform: "uppercase" }}>{item.alt}</span>
+    <Container>
+      <Link href={url} target="_blank">
+        <Logo src={src[1]} alt={alt} width={50} />
+        <span style={{ textTransform: "uppercase" }}>{alt}</span>
       </Link>
     </Container>
   );
@@ -20,6 +22,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px;
+
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 
 const Link = styled.a`

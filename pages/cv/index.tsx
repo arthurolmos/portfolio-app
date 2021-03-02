@@ -6,8 +6,9 @@ import {
   educationItems,
   courseItems,
   professionalItems,
+  technologyItems,
 } from "../../src/data/items";
-import { CvItem } from "../../src/components/cv/CvItem";
+import { CvItem, TechonologyItem } from "../../src/components/cv";
 import styled from "styled-components";
 
 interface Props {}
@@ -26,26 +27,23 @@ export default function Index(props: Props) {
           <Content>
             <Title>Resumo</Title>
             <div style={{ marginBottom: "60px" }}>
-              Sou o Arthur, tenho 32 anos e sou morador de São Caetano do Sul -
-              SP. Sou desenvolvedor fullstack JS freelancer, especializado nos
-              frameworks React e React Native.
-              <br />
-              <br />
-              Inicialmente me formei em produção gráfica pelo SENAI, e após
-              algum tempo atuando na área gráfica, comecei a ter contato com a
-              área de TI e programação, caminho que acabei me identificando e
-              escolhendo como carreira.
+              Sou o Arthur, tenho 32 anos e sou morador de Santo André - SP. Sou
+              desenvolvedor fullstack JS, especializado nos frameworks React e
+              React Native para frontend e Express para backend.
               <br />
               <br />
               Me formei em Análise e Desenvolvimento de sistemas pela FATEC São
-              Caetano do Sul, e pouco após a conclusão do curso comecei a
-              estudar as linguagens que mais me interessaram: React, Node e
-              Python.
+              Caetano do Sul. Em meados de 2018, durante o período do TCC,
+              comecei a me aprofundar no desenvolvimento web e mobile para
+              produzir meu TCC. Desde então, venho estudando, praticando e
+              desenvolvendo projetos pessoais e freelancer no meu precioso tempo
+              livre.
               <br />
-              <br />O meu primeiro projeto finalizado foi o{" "}
+              <br />
+              Em setembro/20 lancei o app{" "}
               <Link href="/portfolio">
                 <LinkStyled>Controlador de Pedidos</LinkStyled>
-              </Link>{" "}
+              </Link>
               , desenvolvido para a{" "}
               <LinkStyled href="https://lojasanguinaria.com.br" target="_blank">
                 Loja Sanguinária
@@ -55,24 +53,33 @@ export default function Index(props: Props) {
                 <LinkStyled>layout do site.</LinkStyled>
               </Link>
               <br />
-              <br />
-              Mais recentemente, lancei o app{" "}
+              Logo após esse projeto, em janeiro/21, lancei o app{" "}
               <Link href="/portfolio/rolezator-app">
                 <LinkStyled>Rolezator</LinkStyled>
-              </Link>
+              </Link>{" "}
               , um projeto pessoal em constante atualização.
+              <br />
+              <br />
             </div>
+
             <Title>Experiencia Profissional</Title>
             {professionalItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
+
             <Title>Formação Academica</Title>
             {educationItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
+
             <Title>Cursos</Title>
             {courseItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
+            })}
+
+            <Title>Tecnologias</Title>
+            {technologyItems.map((item, index) => {
+              return <TechonologyItem item={item} key={index} />;
             })}
           </Content>
         </TitleAndBodyLayout>

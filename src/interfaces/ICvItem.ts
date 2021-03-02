@@ -1,7 +1,8 @@
 export interface ICvItem {
   title: string;
-  subtitle?: string;
-  period: string;
+  institution?: string;
+  period?: string;
   description?: string;
   logo?: string;
+  level?: number;
 }

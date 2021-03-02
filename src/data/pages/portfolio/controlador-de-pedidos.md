@@ -1,5 +1,5 @@
 ---
-title: "Trainometer"
+title: "Controlador de Pedidos"
 backgroundImage: "/images/portfolio/trainometer/header.jpg"
 site: "https://rolezator.netlify.app/"
 github: "https://github.com/arthurolmos/rolezator-full-app"

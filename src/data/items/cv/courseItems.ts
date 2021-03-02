@@ -2,8 +2,8 @@ import { ICvItem } from "../../../interfaces/ICvItem";
 
 export const courseItems: ICvItem[] = [
   {
-    title: "Alura",
-    subtitle: "Formação Node.JS com Express",
+    title: "Formação Node.JS com Express",
+    institution: "Alura",
     period: "Dezembro/2020 - Janeiro/2021",
     logo: "/images/logos/alura.png",
     description:
@@ -18,10 +18,20 @@ export const courseItems: ICvItem[] = [
       "    - ORM;\n" +
       "    - Autenticação JWT;",
   },
+  {
+    title: "Scrum: Agilidade em seu projeto",
+    institution: "Alura",
+    period: "Fevereiro/2021 - Fevereiro/2021",
+    logo: "/images/logos/alura.png",
+    description:
+      "Curso que ensina o processo de SCRUM, explicando seus principais conceitos: sprint, " +
+      "papéis dos participantes, meetings, backlogs, melhorias de processo, desempenho para o time e " +
+      "agilidade nas entregas.",
+  },
 
   {
-    title: "Alura",
-    subtitle: "Formação Python",
+    title: "Formação Python",
+    institution: "Alura",
     period: "Fevereiro/2020 - Cursando",
     logo: "/images/logos/alura.png",
     description:

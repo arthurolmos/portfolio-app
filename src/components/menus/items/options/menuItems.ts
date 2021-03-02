@@ -2,6 +2,10 @@ import { IMenuItem } from "../../../../interfaces";
 
 export const menuItems: IMenuItem[] = [
   {
+    option: "home",
+    url: "/",
+  },
+  {
     option: "portfolio",
     url: "/portfolio",
   },

@@ -22,7 +22,7 @@ export default function Index(props: Props) {
           <Content>
             <Name>Arthur Olmos Wosniaki</Name>
             <Email>arthur.olmos@gmail.com</Email>
-            <Address>São Caetano do Sul - SP</Address>
+            <Address>Santo André - SP</Address>
 
             <LinksContainer>
               {socialNetworkItems.map(
