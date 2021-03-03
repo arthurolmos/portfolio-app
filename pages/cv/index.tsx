@@ -7,8 +7,9 @@ import {
   courseItems,
   professionalItems,
   technologyItems,
+  languageItems,
 } from "../../src/data/items";
-import { CvItem, TechonologyItem } from "../../src/components/cv";
+import { CvItem, TechonologyItem, LanguageItem } from "../../src/components/cv";
 import styled from "styled-components";
 
 interface Props {}
@@ -41,8 +42,8 @@ export default function Index(props: Props) {
               <br />
               <br />
               Em setembro/20 lancei o app{" "}
-              <Link href="/portfolio">
-                <LinkStyled>Controlador de Pedidos</LinkStyled>
+              <Link href="/portfolio/licativo-app">
+                <LinkStyled>Licativo</LinkStyled>
               </Link>
               , desenvolvido para a{" "}
               <LinkStyled href="https://lojasanguinaria.com.br" target="_blank">
@@ -61,26 +62,24 @@ export default function Index(props: Props) {
               <br />
               <br />
             </div>
-
             <Title>Experiencia Profissional</Title>
             {professionalItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
-
             <Title>Formação Academica</Title>
             {educationItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
-
             <Title>Cursos</Title>
             {courseItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
-
             <Title>Tecnologias</Title>
             {technologyItems.map((item, index) => {
               return <TechonologyItem item={item} key={index} />;
             })}
+            <Title>Idiomas</Title>
+            <LanguageItem items={languageItems} />
           </Content>
         </TitleAndBodyLayout>
       </DefaultLayout>

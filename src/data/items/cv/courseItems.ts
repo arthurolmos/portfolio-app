@@ -32,7 +32,7 @@ export const courseItems: ICvItem[] = [
   {
     title: "Formação Python",
     institution: "Alura",
-    period: "Fevereiro/2020 - Cursando",
+    period: "Fevereiro/2021 - Cursando",
     logo: "/images/logos/alura.png",
     description:
       "Curso focado na introdução a linguagem e conceitos básicos do Python." +

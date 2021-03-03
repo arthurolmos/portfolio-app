@@ -22,6 +22,7 @@ export function OptionItem(props: OptionItemProps) {
 
 const ListItem = styled.li`
   color: black;
+  // color: white;
   padding: 0;
   margin: auto;
   display: block;

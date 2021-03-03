@@ -44,23 +44,24 @@ const Container = styled.div`
   align-items: center;
   z-index: 999;
   display: flex;
+  background: white;
 
   @media (max-width: 600px) {
     display: none;
   }
 
-  &::before {
-    z-index: -1;
-    content: "";
-    opacity: 0.7; //para caso tenha um bg diferente
-    background: white;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    margin: 0;
-  }
+  // &::before {
+  //   z-index: -1;
+  //   content: "";
+  //   opacity: 0.4; //para caso tenha um bg diferente
+  //   background: black;
+  //   position: fixed;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 300px;
+  //   margin: 0;
+  // }
 `;
 
 const Content = styled.div`

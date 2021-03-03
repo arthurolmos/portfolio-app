@@ -1,18 +1,18 @@
 import React from "react";
-import { ITechonologyItem } from "../../interfaces";
+import { ICvItem } from "../../interfaces";
 import { ItemLayout } from "../layout";
 import styled from "styled-components";
 
-export function TechonologyItem({ item }: ITechonologyItem) {
-  const { name, values } = item;
+interface CvItemProps {
+  items: ICvItem[];
+}
 
+export function LanguageItem({ items }: CvItemProps) {
   return (
     <ItemLayout>
       <Content>
-        <Name>{name}</Name>
-
-        {values.map((value, index) => {
-          const { title, level, description } = value;
+        {items.map((item, index) => {
+          const { title, level, description } = item;
 
           return (
             <TechnologyContainer key={index}>

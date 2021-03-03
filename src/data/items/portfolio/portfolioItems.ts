@@ -20,9 +20,9 @@ export const portfolioItems: IPortfolioItem[] = [
     github: "https://github.com/arthurolmos/rolezator-full-app",
   },
   {
-    title: "Controlador de Pedidos",
-    url: "controlador-de-pedidos",
-    thumbnail: `/images/portfolio/filosofem.jpg`,
+    title: "Licativo",
+    url: "licativo-app",
+    thumbnail: `/images/portfolio/licativo-app/banner.jpg`,
     text:
       "Aplicativo para controle de vendas de lojas virtuais pequenas (ex: lojas pessoais de Instagram), " +
       "substituindo planilhas e facilitando a portabilidade.\n",
@@ -32,7 +32,7 @@ export const portfolioItems: IPortfolioItem[] = [
       `/images/logos/firebase.png`,
       `/images/logos/expo.png`,
     ],
-    github: "https://github.com/arthurolmos/rolezator-full-app",
+    github: "https://github.com/arthurolmos/controle-lojinha",
   },
   {
     title: "Arthur Wosniaki - Portfolio",
@@ -68,7 +68,7 @@ export const portfolioItems: IPortfolioItem[] = [
       "Aplicativo para registro de treinos.\n" +
       "Registra os exercícios, as séries x repetições, o período e a execução do treino, " +
       "mantendo um histórico aonde é possível ver o progresso do atleta.",
-    logos: [`/images/logos/java.png`, `/images/logos/android.svg`],
+    logos: [`/images/logos/java.png`, `/images/logos/android.png`],
     github: "https://portfolio-app-psi.vercel.app/",
   },
 ];

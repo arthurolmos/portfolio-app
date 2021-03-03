@@ -1,20 +1,17 @@
-import { IconContext } from "react-icons/lib";
-import { ICvItem } from "../../../interfaces/ICvItem";
+import { ICvItem } from "../../../interfaces";
 
 type Categories =
   | "linguagens"
   | "databases"
   | "outras tecnologias relevantes"
-  | "conhecimentos";
+  | "metodologias";
 
 interface ItemProps {
   name: Categories;
   values: ICvItem[];
 }
 
-type TechItemProps = ItemProps[];
-
-export const technologyItems: TechItemProps = [
+export const technologyItems: ItemProps[] = [
   {
     name: "linguagens",
     values: [
@@ -58,6 +55,10 @@ export const technologyItems: TechItemProps = [
         description:
           "Firebase Cloud Firestore, Firebase Cloud Database, MongoDB",
       },
+      {
+        title: "Redis",
+        level: 70,
+      },
     ],
   },
   {
@@ -79,6 +80,10 @@ export const technologyItems: TechItemProps = [
         level: 80,
       },
       {
+        title: "Rest API",
+        level: 80,
+      },
+      {
         title: "Docker",
         level: 70,
       },
@@ -87,13 +92,14 @@ export const technologyItems: TechItemProps = [
         level: 70,
       },
       {
-        title: "Jest",
+        title: "Testes Unitários e Integrados",
         level: 70,
+        description: "Jest",
       },
     ],
   },
   {
-    name: "conhecimentos",
+    name: "metodologias",
     values: [
       {
         title: "MVC & Design Patterns",
@@ -101,7 +107,7 @@ export const technologyItems: TechItemProps = [
       },
       {
         title: "SCRUM",
-        level: 50,
+        level: 70,
       },
     ],
   },
