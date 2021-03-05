@@ -3,7 +3,7 @@ import { ICvItem } from "../../../interfaces";
 type Categories =
   | "linguagens"
   | "databases"
-  | "outras tecnologias relevantes"
+  | "tecnologias relevantes"
   | "metodologias";
 
 interface ItemProps {
@@ -62,7 +62,7 @@ export const technologyItems: ItemProps[] = [
     ],
   },
   {
-    name: "outras tecnologias relevantes",
+    name: "tecnologias relevantes",
     values: [
       {
         title: "Firebase",
@@ -71,7 +71,11 @@ export const technologyItems: ItemProps[] = [
           "Auth, Cloud Firestore, Cloud Database, Storage, Hosting, Cloud Functions, AdminSDK",
       },
       {
-        title: "Frameworks CSS",
+        title: "HTML",
+        level: 80,
+      },
+      {
+        title: "CSS",
         level: 80,
         description: "Styled Components, Bootstrap, SASS",
       },
@@ -95,6 +99,11 @@ export const technologyItems: ItemProps[] = [
         title: "Testes Unitários e Integrados",
         level: 70,
         description: "Jest",
+      },
+      {
+        title: "Adobe CC",
+        level: 70,
+        description: "Photoshop, Illustrator",
       },
     ],
   },

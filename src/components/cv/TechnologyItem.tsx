@@ -1,6 +1,7 @@
 import React from "react";
 import { ITechonologyItem } from "../../interfaces";
 import { ItemLayout } from "../layout";
+import { GaugeItem } from "./GaugeItem";
 import styled from "styled-components";
 
 export function TechonologyItem({ item }: ITechonologyItem) {
@@ -11,79 +12,42 @@ export function TechonologyItem({ item }: ITechonologyItem) {
       <Content>
         <Name>{name}</Name>
 
-        {values.map((value, index) => {
-          const { title, level, description } = value;
+        <GridContainer>
+          {values.map((value, index) => {
+            const { title, level, description } = value;
 
-          return (
-            <TechnologyContainer key={index}>
-              <Header>
-                <Title>
-                  <h4>{title}</h4>
-                </Title>
-                <Level>{level}%</Level>
-              </Header>
-
-              <LevelBar level={level} />
-              <Description>{description}</Description>
-            </TechnologyContainer>
-          );
-        })}
+            return (
+              <GaugeItem
+                key={index}
+                title={title}
+                level={level}
+                description={description}
+              />
+            );
+          })}
+        </GridContainer>
       </Content>
     </ItemLayout>
   );
 }
 
-const Name = styled.h2`
-  text-transform: capitalize;
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
-const TechnologyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+const Name = styled.h2`
+  text-transform: capitalize;
 `;
 
 const Content = styled.div`
   padding: 15px;
   color: black;
   display: block;
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const Description = styled.div`
-  font-style: italic;
-  font-size: 12px;
-`;
-
-const Title = styled.div`
-  display: flex;
-  flex: 1;
-`;
-
-const Level = styled.h4`
-  display: flex;
-  justify-content: flex-end;
-  flex: 1;
-`;
-
-const LevelBar = styled.div`
-  border-top: 9px solid black;
-  border-radius: 15px;
-  width: 100%;
-  z-index: 0;
-  position: relative;
-
-  &::after {
-    position: absolute;
-    width: ${({ level }) => (level ? level + "%" : 0)};
-    border-top: 9px solid green;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: "";
-  }
+  height: 100%;
 `;
