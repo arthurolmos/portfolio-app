@@ -32,7 +32,7 @@ export const portfolioItems: IPortfolioItem[] = [
       `/images/logos/firebase.png`,
       `/images/logos/expo.png`,
     ],
-    github: "https://github.com/arthurolmos/controle-lojinha",
+    github: "https://github.com/arthurolmos/licativo-app",
   },
   {
     title: "Arthur Wosniaki - Portfolio",

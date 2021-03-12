@@ -1,7 +1,7 @@
 ---
 title: "Licativo"
 backgroundImage: "/images/portfolio/licativo-app/banner.jpg"
-github: "https://github.com/arthurolmos/controle-lojinha"
+github: "https://github.com/arthurolmos/licativo-app"
 ---
 
 ## Descrição
