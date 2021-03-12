@@ -23,7 +23,7 @@ const Container = styled.div`
   align-items: center;
   padding: 30px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 15px;
   }
 `;

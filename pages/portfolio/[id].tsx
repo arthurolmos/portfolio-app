@@ -77,7 +77,7 @@ const Header = styled.div`
                   padding-box;
   `}
 
-  @media(max-width: 700px) {
+  @media(max-width: 800px) {
     height: 200px;
   }
 `;
@@ -87,7 +87,7 @@ const Body = styled.div`
   text-align: justify;
   text-justify: inter-word;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 20px;
   }
 `;
@@ -96,7 +96,7 @@ const FaChevronLeftStyled = styled(FaChevronLeft)`
   font-size: 35px;
   transition: all 1s ease;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     font-size: 20px;
   }
 `;
@@ -118,7 +118,7 @@ const BackButton = styled.div`
   background: white;
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     size: 20px;
     width: 50px;
     height: 50px;
@@ -138,7 +138,7 @@ const TitleContainer = styled.div`
   flex-direction: row;
   flex: 1;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;

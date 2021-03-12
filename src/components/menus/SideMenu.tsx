@@ -46,7 +46,7 @@ const Container = styled.div`
   display: flex;
   background: white;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     display: none;
   }
 
@@ -70,7 +70,7 @@ const Content = styled.div`
   align-items: center;
   height: 100%;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `;

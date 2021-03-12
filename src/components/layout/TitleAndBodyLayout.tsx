@@ -44,7 +44,7 @@ const Body = styled.div`
   align-items: center;
   padding: 0 35px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 15px;
   }
 `;

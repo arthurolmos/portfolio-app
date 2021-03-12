@@ -50,7 +50,7 @@ const Container = styled.div`
     border-radius: 15px;
     transition: all 0.3s ease;
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       opacity: 0.9;
     }
   }
@@ -67,7 +67,7 @@ const CollapsibleContainer = styled(Container)`
   overflow: hidden;
   transition: all 0.5s;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     max-height: 220px;
 
     ${({ open }) =>

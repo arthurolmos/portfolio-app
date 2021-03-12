@@ -95,7 +95,7 @@ const Content = styled.div`
 const Title = styled.h2`
   text-transform: uppercase;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     text-align: center;
   }
 `;

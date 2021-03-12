@@ -70,7 +70,7 @@ const ButtonContainer = styled.div`
   bottom: 10px;
   display: none;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     display: flex;
   }
 `;
@@ -84,7 +84,7 @@ const Content = styled.div`
   text-overflow: ellipsis;
   word-wrap: break-word;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
@@ -94,7 +94,7 @@ const Header = styled.div`
   flex: 1;
   padding: 0 15px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 0;
   }
 `;
@@ -104,19 +104,19 @@ const Info = styled.div`
   flex: 1;
   padding: 0 15px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 30px 0;
   }
 `;
 
 const Title = styled.h2`
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     font-size: 20px;
   }
 `;
 
 const Institution = styled.h4`
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     font-size: 16px;
   }
 `;

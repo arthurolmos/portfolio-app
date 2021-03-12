@@ -81,7 +81,7 @@ const Body = styled.div`
     padding: 0;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     padding: 0 15px;
   }
 
@@ -108,7 +108,7 @@ const ThumbnailContainer = styled.div`
 const Thumbnail = styled.img`
   width: 100%;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     height: 140px;
   }
 `;
@@ -118,7 +118,7 @@ const Row = styled.div`
   flex-direction: row;
   width: 100%;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
@@ -126,11 +126,11 @@ const Row = styled.div`
 const UpperRow = styled(Row)`
   flex-direction: row;
 
-  @media (max-width: 1200px) and (min-width: 701px) {
+  @media (max-width: 1200px) and (min-width: 800px) {
     flex-direction: column-reverse;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     flex-direction: column-reverse;
   }
 `;

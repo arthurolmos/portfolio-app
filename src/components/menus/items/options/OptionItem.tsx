@@ -28,7 +28,7 @@ const ListItem = styled.li`
   display: block;
   flex: 1;
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     margin: 0;
     padding: 0 20px;
   }
@@ -57,7 +57,7 @@ const LinkText = styled.p`
     content: " >";
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     text-align: right;
   }
 `;
