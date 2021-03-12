@@ -6,9 +6,9 @@
 
 html {
   background-color: black;
+  height: 100vh;
 }
 
-html,
 body {
   height: 100%;
   margin: 0;
