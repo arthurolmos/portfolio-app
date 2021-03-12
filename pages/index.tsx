@@ -64,7 +64,7 @@ const GreetingsBig = styled.div`
   margin-top: 120px;
   margin-bottom: 60px;
 
-  @media (max-width: 601px) {
+  @media (max-width: 701px) {
     display: none;
     margin-bottom: 25px;
   }
@@ -76,7 +76,7 @@ const GreetingsSmall = styled.div`
   flex-direction: row;
   display: none;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: flex;
     margin-bottom: 25px;
   }

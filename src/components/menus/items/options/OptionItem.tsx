@@ -28,7 +28,7 @@ const ListItem = styled.li`
   display: block;
   flex: 1;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     margin: 0;
     padding: 0 20px;
   }
@@ -44,30 +44,20 @@ const LinkText = styled.p`
     `
     font-weight: bold;
     
-@media (min-width: 601px) {
-  &::after {
-    content:  " >";
-  }
-}
-
-@media (max-width: 600px) {
-  &::before { 
-    content:  "< ";
-  }
-}
-`}
+    &::after {
+      content:  " >";
+    }
+  `}
 
   &:hover {
     opacity: 0.5;
-
-    @media (min-width: 601px) {
-      :after {
-        content: " >";
-      }
-    }
   }
 
-  @media (max-width: 600px) {
+  &:hover:after {
+    content: " >";
+  }
+
+  @media (max-width: 700px) {
     text-align: right;
   }
 `;

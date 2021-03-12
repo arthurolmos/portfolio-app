@@ -6,11 +6,8 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
   margin: 0;
-}
-
-body {
   color: black;
   background-color: black;
   font-family: "Roboto", sans-serif;
@@ -18,11 +15,17 @@ body {
   padding: 0;
   line-height: 1.6;
   position: fixed;
-  background: url("/images/background/bg4_dark.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/images/background/bg4_dark.jpg") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
+  transition: all 999999s;
 }
 
 #__next {

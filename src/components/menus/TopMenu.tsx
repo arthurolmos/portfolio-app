@@ -53,7 +53,7 @@ const Container = styled.div`
 
   flex-direction: row;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: flex;
   }
 `;
@@ -70,7 +70,7 @@ const CollapsableContainer = styled.div`
   left: 0;
   z-index: 998;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: flex;
     max-height: ${({ isOpen }) => (isOpen ? "240px" : "0")};
     transition: max-height 0.5s;

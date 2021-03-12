@@ -21,7 +21,7 @@ export function DefaultLayout(props: Props) {
 const Container = styled.div`
   margin-left: 300px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     margin-left: 0;
   }
 `;
@@ -32,7 +32,7 @@ const Content = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ color }) => color};
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     padding-top: 80px;
   }
 `;

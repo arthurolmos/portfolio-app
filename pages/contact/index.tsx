@@ -49,7 +49,7 @@ const Name = styled.span`
   font-size: 40px;
   padding: 10px 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     font-size: 26px;
   }
 `;
@@ -58,7 +58,7 @@ const Email = styled.span`
   font-size: 24px;
   padding: 10px 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     font-size: 20px;
   }
 `;
@@ -68,7 +68,7 @@ const Address = styled.div`
   font-weight: bold;
   padding: 10px 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     font-size: 16px;
   }
 `;

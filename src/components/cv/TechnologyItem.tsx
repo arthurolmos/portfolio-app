@@ -36,11 +36,11 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1200px) and (min-width: 631px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 630px) {
     grid-template-columns: 1fr;
   }
 `;

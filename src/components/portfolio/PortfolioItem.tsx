@@ -80,6 +80,14 @@ const Body = styled.div`
   @media (max-width: 1200px) {
     padding: 0;
   }
+
+  @media (max-width: 700px) {
+    padding: 0 15px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0;
+  }
 `;
 
 const Description = styled.div`
@@ -100,7 +108,7 @@ const ThumbnailContainer = styled.div`
 const Thumbnail = styled.img`
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     height: 140px;
   }
 `;
@@ -110,13 +118,19 @@ const Row = styled.div`
   flex-direction: row;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `;
 
 const UpperRow = styled(Row)`
-  @media (max-width: 1200px) {
+  flex-direction: row;
+
+  @media (max-width: 1200px) and (min-width: 701px) {
+    flex-direction: column-reverse;
+  }
+
+  @media (max-width: 400px) {
     flex-direction: column-reverse;
   }
 `;
