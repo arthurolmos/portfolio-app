@@ -7,6 +7,7 @@
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   overflow-y: scroll;
+  transition: height 999999s;
 }
 
 ::selection {

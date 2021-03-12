@@ -4,17 +4,11 @@ import type { AppProps } from "next/app";
 import "../src/assets/styles/global.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  let height: number;
-
-  React.useEffect(() => {
-    height = window.innerHeight;
-  }, []);
-
   return (
-    <div style={{ height: height }}>
+    <>
       <SideMenu />
       <TopMenu />
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
