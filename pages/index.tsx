@@ -23,11 +23,7 @@ export default function Home() {
           <GreetingsSmall>
             <LeftColumn>
               <PictureRound>
-                <Avatar
-                  src="/images/profile/pp.jpg"
-                  width="125px"
-                  height="125px"
-                />
+                <Avatar src="/images/profile/pp2.jpg" width="155px" />
               </PictureRound>
             </LeftColumn>
 
@@ -142,10 +138,13 @@ const PictureRound = styled.div`
   height: 125px;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
 `;
 
 const Avatar = styled.img`
   cursor: pointer;
+  position: absolute;
+  left: -10px;
 `;
 
 const Button = styled.div`

@@ -14,9 +14,9 @@ export function SideMenu(props: Props) {
           <Link href="/">
             <PictureRound>
               <Avatar
-                src="/images/profile/pp.jpg"
+                src="/images/profile/pp2.jpg"
                 width="165px"
-                height="165px"
+                style={{ top: 0 }}
               />
             </PictureRound>
           </Link>
