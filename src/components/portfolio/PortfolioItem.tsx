@@ -1,58 +1,87 @@
 import { IPortfolioItem } from "../../interfaces";
 import Link from "next/link";
-import { LinkContainer } from "./LinkContainer";
-import { ItemLayout } from "../layout";
+import { ItemLayout } from "../screen-layouts";
 import styled from "styled-components";
+import { DefaultButton } from "../buttons";
+import { FaGithub, FaGlobeAmericas } from "react-icons/fa";
 
 interface PortfolioItemProps {
   item: IPortfolioItem;
+}
+
+interface Props {
+  site?: string;
+  github?: string;
+}
+
+export function LinkItems(props: Props) {
+  const { site, github } = props;
+
+  return (
+    <LinkContainer>
+      {site && (
+        <a href={site} title={site} target="_blank">
+          <FaGlobeAmericas />
+        </a>
+      )}
+      {github && (
+        <a href={github} title={github} target="_blank">
+          <FaGithub />
+        </a>
+      )}
+    </LinkContainer>
+  );
 }
 
 export function PortfolioItem({ item }: PortfolioItemProps) {
   const { thumbnail, title, text, logos, site, github, url } = item;
 
   return (
-    <ItemLayout>
-      <Content>
-        <UpperRow>
-          <Body>
-            <Header>
-              <h1>{title}</h1>
-
-              <LinkContainer site={site} github={github} />
-            </Header>
-
-            <Description>{text}</Description>
-          </Body>
-
-          <ThumbnailContainer>
-            <Thumbnail src={thumbnail} />
-          </ThumbnailContainer>
-        </UpperRow>
-
-        <LowerRow>
-          <LogosContainer>
-            {logos.map((logo, index) => {
-              return <Logo src={logo} key={index} />;
-            })}
-          </LogosContainer>
-        </LowerRow>
-
+    <Container>
+      <ItemLayout>
         <Row>
-          <ButtonContainer>
-            <Link href={`/portfolio/${url}`}>
-              <Button>Ver Mais</Button>
-            </Link>
-          </ButtonContainer>
+          <Column>
+            <Body>
+              <Header>
+                <h1>{title}</h1>
+                <LinkItems site={site} github={github} />
+              </Header>
+
+              <Description>{text}</Description>
+              <LogosContainer>
+                {logos.map((logo, index) => {
+                  return <Logo src={logo} key={index} />;
+                })}
+              </LogosContainer>
+              <ButtonContainer>
+                <DefaultButton link={`/portfolio/${url}`} title="Ver Mais" />
+              </ButtonContainer>
+            </Body>
+          </Column>
+
+          <Column>
+            <ThumbnailContainer>
+              <Thumbnail src={thumbnail} />
+            </ThumbnailContainer>
+          </Column>
         </Row>
-      </Content>
-    </ItemLayout>
+      </ItemLayout>
+    </Container>
   );
 }
 
 const Header = styled.div`
   display: flex;
   width: 100%;
+`;
+
+const Container = styled.div`
+  display: block;
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const LogosContainer = styled.div`
@@ -76,6 +105,7 @@ const Body = styled.div`
   flex: 1;
   align-items: flex-start;
   padding: 0 40px;
+  gap: 1rem;
 
   @media (max-width: 1200px) {
     padding: 0;
@@ -88,6 +118,11 @@ const Body = styled.div`
   @media (max-width: 400px) {
     padding: 0;
   }
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex: 1;
 `;
 
 const Description = styled.div`
@@ -103,6 +138,7 @@ const ThumbnailContainer = styled.div`
   margin: auto;
   justify-content: center;
   align-items: center;
+  border: 0.25rem solid lightgray;
 `;
 
 const Thumbnail = styled.img`
@@ -117,63 +153,10 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  gap: 2rem;
 
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-`;
-
-const UpperRow = styled(Row)`
-  flex-direction: row;
-
-  @media (max-width: 1200px) and (min-width: 800px) {
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
-  }
-
-  @media (max-width: 600px) {
-    flex-direction: column-reverse;
-  }
-`;
-
-const LowerRow = styled(Row)`
-  margin-top: 30px;
-
-  @media (max-width: 1200px) {
-    flex-direction: column;
-  }
-`;
-
-const Content = styled.div`
-  padding: 15px;
-  color: white;
-  display: flex;
-  min-height: 200px;
-  flex-direction: column;
-
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-`;
-
-const Button = styled.button`
-  background: black;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 100px;
-  height: 40px;
-  transition: all 0.3s ease;
-  font-weight: bold;
-
-  &:hover {
-    background: white;
-    color: black;
-  }
-
-  &:focus {
-    decoration: none;
-    outline: none;
   }
 `;
 
@@ -183,4 +166,25 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+
+  a {
+    color: black;
+    font-size: 30px;
+  }
+
+  a:last-child {
+    margin-left: 30px;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
 `;

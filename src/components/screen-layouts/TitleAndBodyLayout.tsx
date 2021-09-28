@@ -10,17 +10,17 @@ export function TitleAndBodyLayout(props: Props) {
   const { title, children } = props;
 
   return (
-    <Content>
+    <Container>
       <Title>
         <h1>{title}</h1>
       </Title>
 
       <Body>{children}</Body>
-    </Content>
+    </Container>
   );
 }
 
-const Content = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -28,18 +28,25 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-  display: flex;
+  display: inline-flex;
   width: 100%;
-  justify-content: center;
   align-items: center;
   padding: 35px;
   text-transform: uppercase;
   text-align: center;
+
+  h1 {
+    background-color: #7ed957;
+    color: white;
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+  }
 `;
 
 const Body = styled.div`
   display: flex;
-  width: 100%;
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 0 35px;

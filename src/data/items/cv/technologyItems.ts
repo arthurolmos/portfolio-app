@@ -77,15 +77,23 @@ export const technologyItems: ItemProps[] = [
       {
         title: "CSS",
         level: 80,
-        description: "Styled Components, Bootstrap, SASS",
+        description: "Styled Components, Bootstrap, SASS, TailwindCss",
       },
       {
-        title: "Expo",
+        title: "NestJS",
+        level: 80,
+      },
+      {
+        title: "GraphQL/ Apollo",
         level: 80,
       },
       {
         title: "Rest API",
         level: 80,
+      },
+      {
+        title: "NextJS",
+        level: 70,
       },
       {
         title: "Docker",
@@ -103,7 +111,7 @@ export const technologyItems: ItemProps[] = [
       {
         title: "Adobe CC",
         level: 70,
-        description: "Photoshop, Illustrator",
+        description: "Photoshop, Illustrator, InDesign",
       },
     ],
   },

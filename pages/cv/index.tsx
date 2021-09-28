@@ -1,5 +1,8 @@
 import React from "react";
-import { DefaultLayout, TitleAndBodyLayout } from "../../src/components/layout";
+import {
+  DefaultLayout,
+  TitleAndBodyLayout,
+} from "../../src/components/screen-layouts";
 import Head from "next/head";
 import Link from "next/link";
 import {
@@ -62,14 +65,17 @@ export default function Index(props: Props) {
               <br />
               <br />
             </div>
+
             <Title>Experiencia Profissional</Title>
             {professionalItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
             <Title>Formação Academica</Title>
+
             {educationItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
             })}
+
             <Title>Cursos</Title>
             {courseItems.map((item, index) => {
               return <CvItem item={item} key={index} />;
@@ -102,11 +108,18 @@ const Title = styled.h2`
 
 const LinkStyled = styled.a`
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
   cursor: pointer;
 
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5rem;
 `;

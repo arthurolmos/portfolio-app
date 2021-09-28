@@ -3,8 +3,8 @@ import { IFileData } from "../../src/interfaces";
 import { FaChevronLeft } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { DefaultLayout } from "../../src/components/layout";
-import { LinkContainer } from "../../src/components/portfolio/LinkContainer";
+import { DefaultLayout } from "../../src/components/screen-layouts";
+import { LinkItems } from "../../src/components/portfolio/PortfolioItem";
 import styled from "styled-components";
 
 export function getStaticPaths() {
@@ -36,20 +36,18 @@ export default function Portfolio({ fileData }: { fileData: IFileData }) {
         <title>Arthur Wosniaki - Portfolio - {title}</title>
       </Head>
 
-      <DefaultLayout backgroundColor="white" color="black">
-        <Content>
-          <Header background={backgroundImage} />
+      <DefaultLayout>
+        <Header background={backgroundImage} />
 
-          <Body>
-            <TitleContainer>
-              <Title>
-                <h1>{title}</h1>
-              </Title>
-              <LinkContainer site={site} github={github} />
-            </TitleContainer>
-            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          </Body>
-        </Content>
+        <Body>
+          <TitleContainer>
+            <Title>
+              <h1>{title}</h1>
+            </Title>
+            <LinkItems site={site} github={github} />
+          </TitleContainer>
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </Body>
 
         <BackButton onClick={back}>
           <FaChevronLeftStyled />
@@ -58,12 +56,6 @@ export default function Portfolio({ fileData }: { fileData: IFileData }) {
     </>
   );
 }
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-`;
 
 const Header = styled.div`
   width: 100%;

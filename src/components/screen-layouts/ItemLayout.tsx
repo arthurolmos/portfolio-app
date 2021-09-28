@@ -36,30 +36,6 @@ const Container = styled.div`
   margin-bottom: 25px;
   z-index: 0;
   border-radius: 25px;
-
-  &::before {
-    z-index: -1;
-    background: white;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    opacity: 0.6;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-
-    @media (max-width: 800px) {
-      opacity: 0.9;
-    }
-  }
-
-  @media (min-width: 601px) {
-    &:hover:before {
-      opacity: 0.9;
-    }
-  }
 `;
 
 const CollapsibleContainer = styled(Container)`

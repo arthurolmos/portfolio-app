@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { MenuOptions, SocialNetwork } from "./items";
+import { ProfilePicture } from "../profile-picture";
+import { MenuOptions } from "./MenuOptions";
+import { SocialNetwork } from "./SocialNetwork";
 
 interface Props {}
 
@@ -11,21 +13,14 @@ export function SideMenu(props: Props) {
     <Container>
       <Content>
         <Profile>
-          <Link href="/">
-            <PictureRound>
-              <Avatar
-                src="/images/profile/pp2.jpg"
-                width="165px"
-                style={{ top: 0 }}
-              />
-            </PictureRound>
-          </Link>
+          <ProfilePicture />
 
-          <Name>Arthur Wosniaki</Name>
+          <h2>Arthur Wosniaki</h2>
+          <span>JS FullStack Dev</span>
         </Profile>
 
         <MenuOptions />
-        <SocialNetwork />
+        <SocialNetwork invert={true} />
       </Content>
     </Container>
   );
@@ -44,24 +39,11 @@ const Container = styled.div`
   align-items: center;
   z-index: 999;
   display: flex;
-  background: white;
+  background: black;
 
   @media (max-width: 800px) {
     display: none;
   }
-
-  // &::before {
-  //   z-index: -1;
-  //   content: "";
-  //   opacity: 0.4; //para caso tenha um bg diferente
-  //   background: black;
-  //   position: fixed;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 300px;
-  //   margin: 0;
-  // }
 `;
 
 const Content = styled.div`
@@ -75,32 +57,22 @@ const Content = styled.div`
   }
 `;
 
-const PictureRound = styled.div`
-  background: white;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  overflow: hidden;
-
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
 const Profile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
-`;
+  margin-bottom: 50px;
 
-const Avatar = styled.img`
-  cursor: pointer;
-`;
+  h2 {
+    text-transform: uppercase;
+    color: #7ed957;
+  }
 
-const Name = styled.h2`
-  text-transform: uppercase;
+  span {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+  }
 `;

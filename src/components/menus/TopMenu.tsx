@@ -2,7 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import { MenuOptions, SocialNetwork } from "./items";
+import { MenuOptions } from "./MenuOptions";
+import { SocialNetwork } from "./SocialNetwork";
 
 interface Props {}
 
@@ -15,7 +16,7 @@ export function TopMenu(props: Props) {
 
   return (
     <>
-      <Container>
+      <Container open={open}>
         <SocialNetwork />
 
         <Link href="/">
@@ -30,7 +31,7 @@ export function TopMenu(props: Props) {
       </Container>
 
       <CollapsableContainer isOpen={open}>
-        <MenuOptions close={close} />
+        <MenuOptions close={close} color="black" />
       </CollapsableContainer>
     </>
   );
@@ -50,6 +51,7 @@ const Container = styled.div`
   right: 0;
   left: 0;
   height: 80px;
+  box-shadow: 0 0 10px black;
 
   flex-direction: row;
 
@@ -69,6 +71,7 @@ const CollapsableContainer = styled.div`
   right: 0;
   left: 0;
   z-index: 998;
+  box-shadow: 0 0 10px black;
 
   @media (max-width: 800px) {
     display: flex;
@@ -104,9 +107,4 @@ const LogoContainer = styled.div`
   color: black;
   display: flex;
   cursor: pointer;
-`;
-
-const FaBarsStyled = styled(FaBars)`
-  color: transparent;
-  border: 1px solid black;
 `;

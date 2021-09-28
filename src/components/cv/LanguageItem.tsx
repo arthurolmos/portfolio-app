@@ -1,6 +1,6 @@
 import React from "react";
 import { ICvItem } from "../../interfaces";
-import { ItemLayout } from "../layout";
+import { ItemLayout } from "../screen-layouts";
 import { GaugeItem } from "./GaugeItem";
 import styled from "styled-components";
 

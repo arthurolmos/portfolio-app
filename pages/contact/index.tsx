@@ -1,5 +1,8 @@
 import React from "react";
-import { DefaultLayout, TitleAndBodyLayout } from "../../src/components/layout";
+import {
+  DefaultLayout,
+  TitleAndBodyLayout,
+} from "../../src/components/screen-layouts";
 import Head from "next/head";
 import { socialNetworkItems } from "../../src/data/items";
 import { ISocialNetworkItem } from "../../src/interfaces";

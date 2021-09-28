@@ -1,6 +1,9 @@
 import { portfolioItems } from "../../src/data/items";
 import { PortfolioItem } from "../../src/components/portfolio/PortfolioItem";
-import { DefaultLayout, TitleAndBodyLayout } from "../../src/components/layout";
+import {
+  DefaultLayout,
+  TitleAndBodyLayout,
+} from "../../src/components/screen-layouts";
 import Head from "next/head";
 import styled from "styled-components";
 

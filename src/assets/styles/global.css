@@ -4,44 +4,19 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: black;
-  height: 100vh;
-}
-
 body {
-  height: 100%;
-  margin: 0;
-  color: black;
-  background-color: black;
+  display: flex;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("/images/background/bg4_dark.jpg") no-repeat center center
-    fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: white;
   transition: all 999999s;
 }
 
-#__next {
-  position: relative;
-  height: 100%;
-  width: 100vw;
-  overflow-y: scroll;
-}
-
 ::selection {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
 }
 
 input,

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ICvItem } from "../../interfaces";
-import { CollapsibleItemLayout } from "../layout";
+import { CollapsibleItemLayout } from "../screen-layouts";
 import styled from "styled-components";
 
 interface CvItemProps {
